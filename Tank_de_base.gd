@@ -8,6 +8,7 @@ extends KinematicBody2D
 export var speed = 1000
 export var bullet_speed = 1000
 export var fire_rate = 0.5
+
 var velocity = Vector2()
 var can_fire = true
 
