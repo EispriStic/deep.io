@@ -5,7 +5,7 @@ extends KinematicBody2D
 # var a = 2
 # var b = "text"
 
-export var speed = 1000
+export var speed = 500
 export var bullet_speed = 1000
 export var fire_rate = 0.5
 
