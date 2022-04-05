@@ -5,8 +5,11 @@
 [node name="Pentagone" type="KinematicBody2D"]
 
 [node name="Sprite" type="Sprite" parent="."]
-scale = Vector2( 0.75, 0.75 )
+position = Vector2( 47, -48 )
+scale = Vector2( 2.0241, 1.8 )
 texture = ExtResource( 1 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2( 46.1084, -47.033 )
+scale = Vector2( 2.78662, 2.37817 )
 polygon = PoolVector2Array( -7, 23, 18, 23, 26, -1, 6, -17, -14, -1 )
