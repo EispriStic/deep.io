@@ -20,3 +20,7 @@ shape = SubResource( 1 )
 
 [node name="Bullet_point" type="Node2D" parent="."]
 position = Vector2( 233, 26 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 11, 23 )
+current = true
