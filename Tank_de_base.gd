@@ -8,7 +8,7 @@ extends KinematicBody2D
 export var speed = 5000
 export var bullet_speed = 1000
 export var fire_rate = 0.5
-
+var sante = 100 
 var velocity = Vector2()
 var can_fire = true
 
@@ -16,6 +16,8 @@ var bullet = preload("res://Balles/Balle_classic.tscn")
 
 
 func _process(delta):
+	if sante<= 0 :
+		get_tree().change_scene("res://Menu/Menu.tscn")
 	look_at(get_global_mouse_position())
 	if Input.is_action_pressed("fire") and can_fire:
 		var bullet_instance = bullet.instance()
@@ -26,6 +28,7 @@ func _process(delta):
 		can_fire = false
 		yield(get_tree().create_timer(fire_rate),"timeout")
 		can_fire = true
+		sante -= 10
 		
 		
 		
