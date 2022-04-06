@@ -14,6 +14,10 @@ config/name="Deep.lo"
 run/main_scene="res://Main/Main.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Global="*res://Script/Global.gd"
+
 [input]
 
 right={
