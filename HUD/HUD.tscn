@@ -1,0 +1,93 @@
+[gd_scene format=2]
+
+[node name="HUD" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Button" type="Button" parent="."]
+margin_right = 12.0
+margin_bottom = 20.0
+
+[node name="TextureRect" type="TextureRect" parent="Button"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="ProgressBar" type="ProgressBar" parent="Button/TextureRect"]
+margin_right = 4.0
+margin_bottom = 14.0
+
+[node name="Button2" type="Button" parent="."]
+margin_right = 12.0
+margin_bottom = 20.0
+
+[node name="Button3" type="Button" parent="."]
+margin_right = 12.0
+margin_bottom = 20.0
+
+[node name="Button4" type="Button" parent="."]
+margin_right = 12.0
+margin_bottom = 20.0
+
+[node name="Button5" type="Button" parent="."]
+margin_right = 12.0
+margin_bottom = 20.0
+
+[node name="Button6" type="Button" parent="."]
+margin_right = 12.0
+margin_bottom = 20.0
+
+[node name="Button7" type="Button" parent="."]
+margin_right = 12.0
+margin_bottom = 20.0
+
+[node name="Button8" type="Button" parent="."]
+margin_right = 12.0
+margin_bottom = 20.0
+
+[node name="Button9" type="Button" parent="."]
+margin_right = 12.0
+margin_bottom = 20.0
+
+[node name="Button10" type="Button" parent="."]
+margin_right = 12.0
+margin_bottom = 20.0
+
+[node name="Button11" type="Button" parent="."]
+margin_right = 12.0
+margin_bottom = 20.0
+
+[node name="Button12" type="Button" parent="."]
+margin_right = 12.0
+margin_bottom = 20.0
+
+[node name="Button13" type="Button" parent="."]
+margin_right = 12.0
+margin_bottom = 20.0
+
+[node name="Button14" type="Button" parent="."]
+margin_right = 12.0
+margin_bottom = 20.0
+
+[node name="Button15" type="Button" parent="."]
+margin_right = 12.0
+margin_bottom = 20.0
+
+[node name="Button16" type="Button" parent="."]
+margin_right = 12.0
+margin_bottom = 20.0
+
+[node name="Button17" type="Button" parent="."]
+margin_right = 12.0
+margin_bottom = 20.0
+
+[node name="Button18" type="Button" parent="."]
+margin_right = 12.0
+margin_bottom = 20.0
+
+[node name="Button19" type="Button" parent="."]
+margin_right = 12.0
+margin_bottom = 20.0
+
+[node name="Button20" type="Button" parent="."]
+margin_right = 12.0
+margin_bottom = 20.0

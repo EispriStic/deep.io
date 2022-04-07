@@ -27,6 +27,7 @@ extends Node2D
 var max_health = 100
 var min_health = 20
 var health = 1
+var pv = max_health
 
 #attack
 var max_attack = 35
