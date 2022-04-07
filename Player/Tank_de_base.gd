@@ -14,8 +14,8 @@ var can_fire = true
 
 var bullet = preload("res://Balles/Balle_classic.tscn")
 
-
 func _process(delta):
+
 	if sante<= 0 :
 		get_tree().change_scene("res://Menu/Menu.tscn")
 	look_at(get_global_mouse_position())
@@ -29,6 +29,7 @@ func _process(delta):
 		yield(get_tree().create_timer(fire_rate),"timeout")
 		can_fire = true
 		sante -= 10
+		
 		
 		
 		
