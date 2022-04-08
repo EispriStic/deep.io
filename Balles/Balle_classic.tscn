@@ -8,6 +8,7 @@ radius = 12.0001
 height = 43.9998
 
 [node name="Balle_classic" type="RigidBody2D"]
+mass = 10.61
 gravity_scale = 0.0
 contacts_reported = 1
 contact_monitor = true

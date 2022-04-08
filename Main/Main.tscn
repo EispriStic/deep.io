@@ -10,7 +10,7 @@ script = ExtResource( 3 )
 [node name="Tank_de_base" parent="." instance=ExtResource( 1 )]
 
 [node name="Map" parent="." instance=ExtResource( 2 )]
-position = Vector2( 1371, 3024 )
+position = Vector2( 3291, 3093 )
 z_index = -1
 
 [node name="SpawnProps" type="Node2D" parent="."]

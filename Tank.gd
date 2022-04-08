@@ -61,7 +61,7 @@ var regen = 1
 
 #speed 
 var max_speed = 1500
-var min_speed = 15000
+var min_speed = 1500
 var speed = 1
 
 #straf 
@@ -115,8 +115,6 @@ var min_camera = 0
 var camera = 1
 
 
-
-
 #xp : xp
 #level: max_level, level
 var xp = 0
@@ -131,33 +129,22 @@ func _ready():
 
 
 func _process(delta):
-	var xp_require = 0 #Insérer la formule ou le tableau pour l'xp necessaire
-	# tableau d'xp ou définition d'une formule pour definir l'xp necessaire au prochian level
+	var xp_require = 0
+
 	if xp > xp_require :
 		level += 1
 		xp = 0
-		# is_level_up(level)  On verifie si une évolution est dispo (système de dictionnaire avec des nombre pour
-		#guider automatiquement le jeu a proposer les bonnes évolution (demander à zach si tu comprend pas)
+		_is_level_up(level)
 		
-
 func _is_level_up(level):
-	var level_up_refer = [20,30,40,50] #exemple de tableau qui regroupe les différent levelup
-	if level in level_up_refer: #reference des levels up
+	var level_up_refer = [20,30,40,50] 
+	if level in level_up_refer: 
 		var possible_evolution = class_up[up_tree]
-		#on cale la scène des choix ou on insère les sprite des scène des prochain tank 
-		#grâce au class_up qui indique quel tank sont possible de prendre selon ou tu en est dans
-		#l'évolution
-		var select_tank #quand il clique on engage une fonction qui retourne le tank choisit
+		var select_tank 
 		for i in len(class_up[up_tree]):
 			if select_tank == i:
 				up_tree += str(i)
-		#On parcour le tableau pour savoir a qu'elle position se trouvais le tank selectionner pour level up
-		#et on change up_tree qui sera donc égal à "1" + le tank choisit (si il choisit le 2eme ce sera "12"
-		#donc on saura ou il se trouve maintenant dans l'arbre et la prochaine proposition de levelup se fera
-		#depuis la branche "12" du dictionnaire qui regroupe les évolutions possible de tanks.
-		#quand il ne pourra plus évoluer cette fonction ne se lancera plus (definir un level max, ou si 
-		#on fonctionne avec un tableau de levelup on aura rien besoin de faire de plus)
-
+		
 			
 	
 	

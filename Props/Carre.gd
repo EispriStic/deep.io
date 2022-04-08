@@ -1,4 +1,4 @@
-extends KinematicBody2D
+extends RigidBody2D
 
 
 # Declare member variables here. Examples:
@@ -23,3 +23,5 @@ func _ready():
 	else:
 		position.x += coord_x 
 		position.y += coord_y
+
+
