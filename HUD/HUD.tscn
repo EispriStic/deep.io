@@ -13,46 +13,25 @@ border_color = Color( 0, 0, 0, 1 )
 [node name="HUD" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -8.0
-margin_top = -50.0
-margin_right = -8.0
-margin_bottom = -50.0
-
-[node name="Health" type="Button" parent="."]
-margin_left = 330.0
-margin_top = 216.0
-margin_right = 472.0
-margin_bottom = 239.0
-
-[node name="TextureRect" type="TextureRect" parent="Health"]
-margin_right = 40.0
-margin_bottom = 40.0
-
-[node name="ProgressBar" type="ProgressBar" parent="Health/TextureRect"]
-margin_left = 2.0
-margin_top = 1.0
-margin_right = 141.0
-margin_bottom = 21.0
-theme = SubResource( 1 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_colors/font_color_shadow = Color( 0.901961, 0.101961, 0.85098, 1 )
-custom_styles/fg = SubResource( 2 )
-value = 100.0
-percent_visible = false
+margin_left = 4.0
+margin_top = 3.0
+margin_right = 4.0
+margin_bottom = 3.0
 
 [node name="Bullet damage" type="Button" parent="."]
-margin_right = 12.0
-margin_bottom = 20.0
+margin_left = -3.0
+margin_top = 540.0
+margin_right = 20.0
+margin_bottom = 561.0
 
 [node name="TextureRect" type="TextureRect" parent="Bullet damage"]
 margin_right = 40.0
 margin_bottom = 40.0
 
 [node name="ProgressBar" type="ProgressBar" parent="Bullet damage/TextureRect"]
-margin_left = 2.0
-margin_top = 1.0
-margin_right = 141.0
-margin_bottom = 21.0
+margin_left = 26.0
+margin_right = 165.0
+margin_bottom = 20.0
 theme = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 0.901961, 0.101961, 0.85098, 1 )
@@ -60,66 +39,239 @@ custom_styles/fg = SubResource( 2 )
 value = 100.0
 percent_visible = false
 
-[node name="Defense" type="Button" parent="."]
-margin_right = 12.0
-margin_bottom = 20.0
+[node name="Health" type="Button" parent="."]
+margin_left = -3.0
+margin_top = 299.0
+margin_right = 20.0
+margin_bottom = 320.0
 
-[node name="Reload" type="Button" parent="."]
-margin_right = 12.0
-margin_bottom = 20.0
+[node name="TextureRect" type="TextureRect" parent="Health"]
+margin_right = 40.0
+margin_bottom = 40.0
 
-[node name="Shoot speed" type="Button" parent="."]
-margin_right = 12.0
+[node name="ProgressBar" type="ProgressBar" parent="Health/TextureRect"]
+margin_left = 26.0
+margin_right = 165.0
 margin_bottom = 20.0
+theme = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0.901961, 0.101961, 0.85098, 1 )
+custom_styles/fg = SubResource( 2 )
+value = 100.0
+percent_visible = false
 
-[node name="Bullet duration" type="Button" parent="."]
-margin_right = 12.0
-margin_bottom = 20.0
+[node name="Range" type="Button" parent="."]
+margin_left = -3.0
+margin_top = 323.0
+margin_right = 20.0
+margin_bottom = 344.0
 
-[node name="Health regeneration" type="Button" parent="."]
-margin_right = 12.0
-margin_bottom = 20.0
+[node name="TextureRect" type="TextureRect" parent="Range"]
+margin_right = 40.0
+margin_bottom = 40.0
 
-[node name="Speed" type="Button" parent="."]
-margin_right = 12.0
+[node name="ProgressBar" type="ProgressBar" parent="Range/TextureRect"]
+margin_left = 26.0
+margin_right = 165.0
 margin_bottom = 20.0
-
-[node name="Straff" type="Button" parent="."]
-margin_right = 12.0
-margin_bottom = 20.0
-
-[node name="Sida" type="Button" parent="."]
-margin_right = 12.0
-margin_bottom = 20.0
-
-[node name="Farmer" type="Button" parent="."]
-margin_right = 12.0
-margin_bottom = 20.0
-
-[node name="Luck" type="Button" parent="."]
-margin_right = 12.0
-margin_bottom = 20.0
-
-[node name="Bullet penetration" type="Button" parent="."]
-margin_right = 12.0
-margin_bottom = 20.0
-
-[node name="Lifesteal" type="Button" parent="."]
-margin_right = 12.0
-margin_bottom = 20.0
-
-[node name="Fist" type="Button" parent="."]
-margin_right = 12.0
-margin_bottom = 20.0
-
-[node name="Godmod" type="Button" parent="."]
-margin_right = 12.0
-margin_bottom = 20.0
+theme = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0.901961, 0.101961, 0.85098, 1 )
+custom_styles/fg = SubResource( 2 )
+value = 100.0
+percent_visible = false
 
 [node name="Size" type="Button" parent="."]
-margin_right = 12.0
+margin_left = -3.0
+margin_top = 347.0
+margin_right = 20.0
+margin_bottom = 368.0
+
+[node name="TextureRect" type="TextureRect" parent="Size"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="ProgressBar" type="ProgressBar" parent="Size/TextureRect"]
+margin_left = 26.0
+margin_right = 165.0
 margin_bottom = 20.0
+theme = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0.901961, 0.101961, 0.85098, 1 )
+custom_styles/fg = SubResource( 2 )
+value = 100.0
+percent_visible = false
 
 [node name="Camera" type="Button" parent="."]
-margin_right = 12.0
+margin_left = -3.0
+margin_top = 371.0
+margin_right = 20.0
+margin_bottom = 392.0
+
+[node name="TextureRect" type="TextureRect" parent="Camera"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="ProgressBar" type="ProgressBar" parent="Camera/TextureRect"]
+margin_left = 26.0
+margin_right = 165.0
 margin_bottom = 20.0
+theme = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0.901961, 0.101961, 0.85098, 1 )
+custom_styles/fg = SubResource( 2 )
+value = 100.0
+percent_visible = false
+
+[node name="Bullet speed" type="Button" parent="."]
+margin_left = -3.0
+margin_top = 395.0
+margin_right = 20.0
+margin_bottom = 416.0
+
+[node name="TextureRect" type="TextureRect" parent="Bullet speed"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="ProgressBar" type="ProgressBar" parent="Bullet speed/TextureRect"]
+margin_left = 26.0
+margin_right = 165.0
+margin_bottom = 20.0
+theme = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0.901961, 0.101961, 0.85098, 1 )
+custom_styles/fg = SubResource( 2 )
+value = 100.0
+percent_visible = false
+
+[node name="Sida" type="Button" parent="."]
+margin_left = -3.0
+margin_top = 419.0
+margin_right = 20.0
+margin_bottom = 440.0
+
+[node name="TextureRect" type="TextureRect" parent="Sida"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="ProgressBar" type="ProgressBar" parent="Sida/TextureRect"]
+margin_left = 26.0
+margin_right = 165.0
+margin_bottom = 20.0
+theme = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0.901961, 0.101961, 0.85098, 1 )
+custom_styles/fg = SubResource( 2 )
+value = 100.0
+percent_visible = false
+
+[node name="Fist" type="Button" parent="."]
+margin_left = -3.0
+margin_top = 443.0
+margin_right = 20.0
+margin_bottom = 464.0
+
+[node name="TextureRect" type="TextureRect" parent="Fist"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="ProgressBar" type="ProgressBar" parent="Fist/TextureRect"]
+margin_left = 26.0
+margin_right = 165.0
+margin_bottom = 20.0
+theme = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0.901961, 0.101961, 0.85098, 1 )
+custom_styles/fg = SubResource( 2 )
+value = 100.0
+percent_visible = false
+
+[node name="Reload" type="Button" parent="."]
+margin_left = -3.0
+margin_top = 467.0
+margin_right = 20.0
+margin_bottom = 488.0
+
+[node name="TextureRect" type="TextureRect" parent="Reload"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="ProgressBar" type="ProgressBar" parent="Reload/TextureRect"]
+margin_left = 26.0
+margin_right = 165.0
+margin_bottom = 20.0
+theme = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0.901961, 0.101961, 0.85098, 1 )
+custom_styles/fg = SubResource( 2 )
+value = 100.0
+percent_visible = false
+
+[node name="Straff" type="Button" parent="."]
+margin_left = -3.0
+margin_top = 492.0
+margin_right = 20.0
+margin_bottom = 513.0
+
+[node name="TextureRect" type="TextureRect" parent="Straff"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="ProgressBar" type="ProgressBar" parent="Straff/TextureRect"]
+margin_left = 26.0
+margin_right = 165.0
+margin_bottom = 20.0
+theme = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0.901961, 0.101961, 0.85098, 1 )
+custom_styles/fg = SubResource( 2 )
+value = 100.0
+percent_visible = false
+
+[node name="Farmer" type="Button" parent="."]
+margin_left = -3.0
+margin_top = 516.0
+margin_right = 20.0
+margin_bottom = 537.0
+
+[node name="TextureRect" type="TextureRect" parent="Farmer"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="ProgressBar" type="ProgressBar" parent="Farmer/TextureRect"]
+margin_left = 26.0
+margin_right = 165.0
+margin_bottom = 20.0
+theme = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0.901961, 0.101961, 0.85098, 1 )
+custom_styles/fg = SubResource( 2 )
+value = 100.0
+percent_visible = false
+
+[node name="Farmer2" type="Button" parent="."]
+anchor_top = 98.377
+anchor_bottom = 98.377
+margin_left = -3.0
+margin_top = 540.0
+margin_right = 20.0
+margin_bottom = 561.0
+
+[node name="TextureRect" type="TextureRect" parent="Farmer2"]
+anchor_top = 98.377
+anchor_bottom = 98.377
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="ProgressBar" type="ProgressBar" parent="Farmer2/TextureRect"]
+anchor_top = 98.377
+anchor_bottom = 98.377
+margin_left = 26.0
+margin_right = 165.0
+margin_bottom = 20.0
+theme = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0.901961, 0.101961, 0.85098, 1 )
+custom_styles/fg = SubResource( 2 )
+value = 100.0
+percent_visible = false
