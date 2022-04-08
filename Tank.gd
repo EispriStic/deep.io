@@ -61,7 +61,7 @@ var regen = 1
 
 #speed 
 var max_speed = 1500
-var min_speed = 500
+var min_speed = 15000
 var speed = 1
 
 #straf 

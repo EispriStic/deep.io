@@ -42,3 +42,5 @@ position = Vector2( 3.05176e-05, 76.0001 )
 scale = Vector2( 17.1417, 14.2592 )
 z_index = -10
 texture = ExtResource( 1 )
+
+[node name="SpawnProps" type="Node2D" parent="."]

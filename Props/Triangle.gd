@@ -12,14 +12,15 @@ func _ready():
 	var coord_y = (randi() % 54000) - 27715
 	if -7500 < coord_x and coord_x < 0 :
 		coord_x -= 7500
-		if rand_range(0,10) > 4:
+		if rand_range(0,10) > 6:
 			position.x += coord_x 
 			position.y += coord_y 
 	elif 0 < coord_x and coord_x < 7500 :
 		coord_x += 7500
-		if rand_range(0,10) > 4:
+		if rand_range(0,10) > 6:
 			position.x += coord_x 
 			position.y += coord_y 
 	else:
-		position.x += coord_x 
-		position.y += coord_y
+		if rand_range(0,10) > 6:
+			position.x += coord_x 
+			position.y += coord_y
