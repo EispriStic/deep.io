@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=2]
+[gd_scene load_steps=61 format=2]
 
 [ext_resource path="res://Asset/HUD/Styles/Health_theme.tres" type="StyleBox" id=1]
 [ext_resource path="res://Asset/HUD/icone/hearth.png" type="Texture" id=2]
@@ -37,6 +37,7 @@
 [ext_resource path="res://Asset/HUD/icone/size.png" type="Texture" id=35]
 [ext_resource path="res://Asset/HUD/Styles/camera.tres" type="StyleBox" id=36]
 [ext_resource path="res://Asset/HUD/Styles/fist.tres" type="StyleBox" id=37]
+[ext_resource path="res://Asset/HUD/icone/mur.png" type="Texture" id=38]
 
 [sub_resource type="StyleBoxFlat" id=14]
 draw_center = false
@@ -838,8 +839,8 @@ percent_visible = false
 
 [node name="Sprite" type="Sprite" parent="Panel/Body"]
 position = Vector2( 13, 12 )
-scale = Vector2( 0.0377346, 0.0355735 )
-texture = ExtResource( 32 )
+scale = Vector2( 0.0364454, 0.0334117 )
+texture = ExtResource( 38 )
 
 [node name="Label" type="Label" parent="."]
 margin_left = 865.0
