@@ -8,7 +8,6 @@ extends KinematicBody2D
 
 
 
-
 var velocity = Vector2()
 var can_fire = true
 
@@ -43,7 +42,18 @@ func _physics_process(delta):
 	for index in get_slide_count():
 		var collision = get_slide_collision(index)
 		collision.collider.apply_central_impulse(-collision.normal * push)
-		Tank.pv -= 10
+		
+func _on_Hitbox_body_entered(body):
+	if body.is_in_group("Hexagone"):
+		Tank.pv -= Tank.degat_hexagone
+	if body.is_in_group("Carre"):
+		Tank.pv -= Tank.degat_carre
+	if body.is_in_group("Triangle"):
+		Tank.pv -= Tank.degat_triangle
+	if body.is_in_group("Pentagone"):
+		Tank.pv -= Tank.degat_pentagone
+	
+	
 #	var direction = Vector2()
 #	if Input.is_action_pressed('right') :
 #		direction += Vector2(1,0)
@@ -54,3 +64,5 @@ func _physics_process(delta):
 #	if Input.is_action_pressed('down') :
 #		direction += Vector2(0,1)
 #	move_and_slide(direction * speed)
+
+

@@ -9,7 +9,7 @@ bounce = 1.0
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 430.5, 429 )
 
-[node name="Carre" type="RigidBody2D"]
+[node name="Carre" type="RigidBody2D" groups=["Carre"]]
 mass = 21.47
 physics_material_override = SubResource( 2 )
 gravity_scale = 0.0
@@ -27,4 +27,4 @@ texture = ExtResource( 1 )
 position = Vector2( -2.5, -2 )
 shape = SubResource( 1 )
 
-[connection signal="body_shape_entered" from="." to="." method="_on_Carre_body_shape_entered"]
+[connection signal="body_entered" from="." to="." method="_on_Carre_body_entered"]

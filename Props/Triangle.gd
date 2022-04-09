@@ -1,10 +1,10 @@
-extends KinematicBody2D
+extends RigidBody2D
 
 
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-
+var triangle_pv = 50
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -24,3 +24,12 @@ func _ready():
 		if rand_range(0,10) > 6:
 			position.x += coord_x 
 			position.y += coord_y
+
+func _physics_process(delta):
+	if triangle_pv <= 0 :
+		queue_free()
+
+func _on_Triangle_body_entered(body):
+	if body.is_in_group("Balles"):
+		triangle_pv -= Tank.min_attack
+

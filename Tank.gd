@@ -114,6 +114,18 @@ var max_camera = 500
 var min_camera = 0
 var camera = 1
 
+#degat_carre
+var degat_carre = 1
+
+#degat_triangle
+var degat_triangle = 2
+
+#degat_pentagone
+var degat_pentagone = 5
+
+#degat_hexagone
+var degat_hexagone = 8
+
 
 #xp : xp
 #level: max_level, level
