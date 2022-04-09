@@ -20,6 +20,7 @@ func _process(delta):
 	if Tank.pv <= 0 :
 		get_tree().change_scene("res://Menu/Menu.tscn")
 	look_at(get_global_mouse_position())
+	
 	if Input.is_action_pressed("fire") and can_fire:
 		var bullet_instance = bullet.instance()
 		bullet_instance.position = $Bullet_point.get_global_position()
@@ -29,7 +30,6 @@ func _process(delta):
 		can_fire = false
 		yield(get_tree().create_timer(Tank.reload),"timeout")
 		can_fire = true
-		Tank.pv -= 10
 		
 		
 		
@@ -43,6 +43,7 @@ func _physics_process(delta):
 	for index in get_slide_count():
 		var collision = get_slide_collision(index)
 		collision.collider.apply_central_impulse(-collision.normal * push)
+		Tank.pv -= 10
 #	var direction = Vector2()
 #	if Input.is_action_pressed('right') :
 #		direction += Vector2(1,0)

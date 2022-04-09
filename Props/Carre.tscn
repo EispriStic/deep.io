@@ -1,28 +1,30 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Asset/Blocs/Carre.png" type="Texture" id=1]
+[ext_resource path="res://Asset/Player/téléchargé.png" type="Texture" id=1]
 [ext_resource path="res://Props/Carre.gd" type="Script" id=2]
 
 [sub_resource type="PhysicsMaterial" id=2]
 bounce = 1.0
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 93.5, 85.5 )
+extents = Vector2( 430.5, 429 )
 
 [node name="Carre" type="RigidBody2D"]
 mass = 21.47
 physics_material_override = SubResource( 2 )
 gravity_scale = 0.0
+contacts_reported = 1
+contact_monitor = true
 can_sleep = false
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( -1, -0.999996 )
-scale = Vector2( 2.24699, 2.1375 )
+scale = Vector2( 2.256, 2.256 )
 texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -1.5, -1.5 )
+position = Vector2( -2.5, -2 )
 shape = SubResource( 1 )
 
 [connection signal="body_shape_entered" from="." to="." method="_on_Carre_body_shape_entered"]
