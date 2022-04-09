@@ -38,7 +38,7 @@ func _physics_process(delta):
 	velocity.y = (int(Input.is_action_pressed('down')) - int(Input.is_action_pressed('up'))) *Tank.min_speed
 	velocity.normalized()
 	var push = 100
-	move_and_slide(velocity, Vector2.UP, false, 1, PI/4, false)
+	move_and_slide(velocity, Vector2(0,0),false, 1, 0, false)
 	for index in get_slide_count():
 		var collision = get_slide_collision(index)
 		collision.collider.apply_central_impulse(-collision.normal * push)
