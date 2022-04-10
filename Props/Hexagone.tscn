@@ -1,10 +1,44 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Asset/Blocs/Hexagone_jackpot-removebg-preview.png" type="Texture" id=1]
 [ext_resource path="res://Props/Hexagone.gd" type="Script" id=2]
 
+[sub_resource type="PhysicsMaterial" id=3]
+absorbent = true
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.0980392, 0.498039, 0.8, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0, 0, 1 )
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+corner_detail = 20
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 1, 1, 1, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0, 0, 1 )
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+corner_detail = 20
+
 [node name="Hexagone" type="RigidBody2D" groups=["Hexagone"]]
+physics_material_override = SubResource( 3 )
 gravity_scale = 0.0
+contacts_reported = 1
+contact_monitor = true
+linear_damp = 1.2
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -16,5 +50,15 @@ texture = ExtResource( 1 )
 position = Vector2( 11, -4 )
 scale = Vector2( 3.40854, 3.04304 )
 polygon = PoolVector2Array( -36.6326, -13.0723, -35.0117, 27.234, -0.324178, 45.7531, 34.3634, 27.234, 37.281, -10.5305, -0.324178, -27.9602 )
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+margin_left = -124.0
+margin_top = 151.0
+margin_right = 134.0
+margin_bottom = 183.0
+custom_styles/fg = SubResource( 1 )
+custom_styles/bg = SubResource( 2 )
+max_value = 20.0
+percent_visible = false
 
 [connection signal="body_entered" from="." to="." method="_on_Hexagone_body_entered"]

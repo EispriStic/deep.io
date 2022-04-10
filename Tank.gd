@@ -192,7 +192,7 @@ func _set_stat():
 	for stat in Stats:
 		for attribut in Stats[stat]:
 			if attribut == stat:
-				Stats[stat][attribut] = 0
+				Stats[stat][attribut] = 15
 	_update_stat()
 	
 				
