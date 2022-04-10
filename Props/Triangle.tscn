@@ -16,4 +16,10 @@ position = Vector2( 15, 9 )
 scale = Vector2( 1.07044, 1.07044 )
 polygon = PoolVector2Array( -36, 21, 0, -39, 39, 24 )
 
+[node name="ProgressBar" type="ProgressBar" parent="."]
+margin_left = -422.0
+margin_top = 137.0
+margin_right = 417.0
+margin_bottom = 194.0
+
 [connection signal="body_entered" from="." to="." method="_on_Triangle_body_entered"]
