@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=2]
+[gd_scene load_steps=58 format=2]
 
 [ext_resource path="res://Asset/HUD/Styles/Health_theme.tres" type="StyleBox" id=1]
 [ext_resource path="res://Asset/HUD/icone/hearth.png" type="Texture" id=2]
@@ -24,7 +24,6 @@
 [ext_resource path="res://Asset/HUD/icone/virus.png" type="Texture" id=22]
 [ext_resource path="res://Asset/HUD/Styles/sida.tres" type="StyleBox" id=23]
 [ext_resource path="res://Asset/HUD/Styles/luck.tres" type="StyleBox" id=24]
-[ext_resource path="res://Asset/HUD/Styles/Body.tres" type="StyleBox" id=25]
 [ext_resource path="res://Asset/HUD/Styles/penetration.tres" type="StyleBox" id=26]
 [ext_resource path="res://Asset/HUD/Styles/godmod.tres" type="StyleBox" id=27]
 [ext_resource path="res://Asset/HUD/Styles/size.tres" type="StyleBox" id=28]
@@ -37,7 +36,6 @@
 [ext_resource path="res://Asset/HUD/icone/size.png" type="Texture" id=35]
 [ext_resource path="res://Asset/HUD/Styles/camera.tres" type="StyleBox" id=36]
 [ext_resource path="res://Asset/HUD/Styles/fist.tres" type="StyleBox" id=37]
-[ext_resource path="res://Asset/HUD/icone/mur.png" type="Texture" id=38]
 
 [sub_resource type="StyleBoxFlat" id=14]
 draw_center = false
@@ -300,19 +298,6 @@ border_width_right = 1
 border_width_bottom = 1
 border_color = Color( 0, 0, 0, 1 )
 border_blend = true
-corner_radius_top_left = 100
-corner_radius_top_right = 100
-corner_radius_bottom_right = 100
-corner_radius_bottom_left = 100
-corner_detail = 20
-
-[sub_resource type="StyleBoxFlat" id=21]
-bg_color = Color( 0.321569, 0, 0.470588, 1 )
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color( 0, 0, 0, 1 )
 corner_radius_top_left = 100
 corner_radius_top_right = 100
 corner_radius_bottom_right = 100
@@ -815,32 +800,6 @@ percent_visible = false
 position = Vector2( 13, 12 )
 scale = Vector2( 0.0377346, 0.0355735 )
 texture = ExtResource( 32 )
-
-[node name="Body" type="Button" parent="Panel"]
-margin_left = 12.0
-margin_top = 538.0
-margin_right = 38.0
-margin_bottom = 563.0
-custom_styles/hover = ExtResource( 25 )
-custom_styles/pressed = ExtResource( 25 )
-custom_styles/focus = ExtResource( 25 )
-custom_styles/disabled = ExtResource( 25 )
-custom_styles/normal = ExtResource( 25 )
-
-[node name="ProgressBar" type="ProgressBar" parent="Panel/Body"]
-margin_left = 32.0
-margin_top = 5.0
-margin_right = 217.0
-margin_bottom = 21.0
-custom_styles/fg = SubResource( 21 )
-custom_styles/bg = SubResource( 2 )
-value = 90.0
-percent_visible = false
-
-[node name="Sprite" type="Sprite" parent="Panel/Body"]
-position = Vector2( 13, 12 )
-scale = Vector2( 0.0364454, 0.0334117 )
-texture = ExtResource( 38 )
 
 [node name="Label" type="Label" parent="."]
 margin_left = 865.0
