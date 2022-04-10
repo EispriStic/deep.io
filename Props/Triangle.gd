@@ -25,16 +25,10 @@ func _ready():
 			position.x += coord_x 
 			position.y += coord_y
 
-func _process(delta):
-	if triangle_pv >= 1 :
-		$ProgressBar.hide()
-	else : 
-		$ProgressBar.show()
-	$ProgressBar.value = triangle_pv
+func _physics_process(delta):
 	if triangle_pv <= 0 :
 		queue_free()
-		
-		
+
 func _on_Triangle_body_entered(body):
 	if body.is_in_group("Balles"):
 		triangle_pv -= Tank.min_attack

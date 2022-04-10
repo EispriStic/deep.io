@@ -28,10 +28,6 @@ func _ready():
 	$ProgressBar.hide()
 
 func _process(delta):
-	if carre_pv >= 20 :
-		$ProgressBar.hide()
-	else : 
-		$ProgressBar.show()
 	$ProgressBar.value = carre_pv
 	if carre_pv <= 0 :
 		queue_free()
