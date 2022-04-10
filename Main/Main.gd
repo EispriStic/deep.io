@@ -48,6 +48,5 @@ func _process(delta):
 	else:
 		pass
 	nombre_props += 1 
-	print(nombre_props)
 		
 

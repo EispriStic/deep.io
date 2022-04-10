@@ -10,32 +10,42 @@ extends KinematicBody2D
 
 var velocity = Vector2()
 var can_fire = true
+var can_regen = true
 
 var bullet = preload("res://Balles/Balle_classic.tscn")
 
 
 func _process(delta):
-	var sante = Tank.pv
-	if Tank.pv <= 0 :
-		get_tree().change_scene("res://Menu/Menu.tscn")
+	#var sante = Tank.pv
+#	if Tank.pv <= 0 :
+#		get_tree().change_scene("res://Menu/Menu.tscn")
 	look_at(get_global_mouse_position())
 	
 	if Input.is_action_pressed("fire") and can_fire:
 		var bullet_instance = bullet.instance()
 		bullet_instance.position = $Bullet_point.get_global_position()
 		bullet_instance.rotation_degrees = rotation_degrees
-		bullet_instance.apply_impulse(Vector2(), Vector2(Tank.min_sspeed, 0 ).rotated(rotation))
+		bullet_instance.apply_impulse(Vector2(), Vector2(Tank.Stats["shoot_speed"]["shoot_speed_value"], 0 ).rotated(rotation))
 		get_tree().get_root().add_child(bullet_instance)
 		can_fire = false
-		yield(get_tree().create_timer(Tank.reload),"timeout")
+		yield(get_tree().create_timer(Tank.Stats["reload"]["reload_value"]),"timeout")
 		can_fire = true
+	
+	if Tank.Stats["health"]["pv"] < Tank.Stats["health"]["health_value"] and can_regen:
+		Tank.Stats["health"]["pv"] += Tank.Stats["regen"]["regen_value"]
+		can_regen = false
+		yield(get_tree().create_timer(6),"timeout")
+		can_regen = true
+	
+	if Tank.Stats["health"]["pv"]<=0:
+		get_tree().change_scene("res://Menu/Menu.tscn")
 		
 		
 		
 		
 func _physics_process(delta):
-	velocity.x = (int(Input.is_action_pressed('right')) - int(Input.is_action_pressed('left'))) *Tank.min_speed
-	velocity.y = (int(Input.is_action_pressed('down')) - int(Input.is_action_pressed('up'))) *Tank.min_speed
+	velocity.x = (int(Input.is_action_pressed('right')) - int(Input.is_action_pressed('left'))) *Tank.Stats["speed"]["speed_value"]
+	velocity.y = (int(Input.is_action_pressed('down')) - int(Input.is_action_pressed('up'))) *Tank.Stats["speed"]["speed_value"]
 	velocity.normalized()
 	var push = 100
 	move_and_slide(velocity, Vector2(0,0),false, 1, 0, false)
@@ -45,13 +55,13 @@ func _physics_process(delta):
 		
 func _on_Hitbox_body_entered(body):
 	if body.is_in_group("Hexagone"):
-		Tank.pv -= Tank.degat_hexagone
+		Tank.Stats["health"]["pv"] -= Tank.degat_hexagone
 	if body.is_in_group("Carre"):
-		Tank.pv -= Tank.degat_carre
+		Tank.Stats["health"]["pv"]  -= Tank.degat_carre
 	if body.is_in_group("Triangle"):
-		Tank.pv -= Tank.degat_triangle
+		Tank.Stats["health"]["pv"]  -= Tank.degat_triangle
 	if body.is_in_group("Pentagone"):
-		Tank.pv -= Tank.degat_pentagone
+		Tank.Stats["health"]["pv"]  -= Tank.degat_pentagone
 	
 	
 #	var direction = Vector2()

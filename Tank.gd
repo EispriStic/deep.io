@@ -26,165 +26,121 @@ extends Node2D
 var Stats = {
 	
 	"health":{
-		"min_health":20,
-		"max_health":100,
+		"min_health":20.0,
+		"max_health":100.0,
 		"health":0,
-		"health_value":0
+		"health_value":0.0,
+		"pv":0.0
 	},
 	"attack":{
-		"min_attack":2,
-		"max_attack":12,
+		"min_attack":2.0,
+		"max_attack":12.0,
 		"attack":0,
-		"attack_value":0
+		"attack_value":00
 	},
 	"defense":{
-		"min_defense":5,
-		"max_defense":25,
+		"min_defense":5.0,
+		"max_defense":25.0,
 		"defense":0,
-		"defense_value":0
+		"defense_value":0.0
 	},
 	"reload":{
-		"min_reload":2.0,
-		"max_reload":0.64,
+		"min_reload":1.35,
+		"max_reload":0.02,
 		"reload":0,
-		"reload_value":0
+		"reload_value":0.0
 	},
 	"shoot_speed":{
-		"min_shoot_speed":1500,
-		"max_shoot_speed":5000,
+		"min_shoot_speed":1500.0,
+		"max_shoot_speed":5000.0,
 		"shoot_speed":0,
-		"shoot_speed_value":0
+		"shoot_speed_value":0.0
 	},
 	"duration":{
-		"min_duration":3,
-		"max_duration":10,
-		"duraton":0,
-		"duration_value":0
+		"min_duration":3.0,
+		"max_duration":10.0,
+		"duration":0,
+		"duration_value":0.0
 	},
 	"regen":{
-		
+		"min_regen":1.0,
+		"max_regen":6.0,
+		"regen":0,
+		"regen_value":0.0
+	},
+	"speed":{
+		"min_speed":500.0,
+		"max_speed":1500.0,
+		"speed":0,
+		"speed_value":0.0
+	},
+	"straf":{
+		"min_straf":0.0,
+		"max_straf":100.0,
+		"straf":0,
+		"straf_value":0.0
+	},
+	"sida":{
+		"min_sida":0.0,
+		"max_sida":4.0,
+		"sida":0,
+		"sida_value":0.0
+	},
+	"farmer":{
+		"min_farmer":0.0,
+		"max_farmer":150.0,
+		"farmer":0,
+		"farmer_value":0.0
+	},
+	"luck":{
+		"min_luck":0.0,
+		"max_luck":100.0,
+		"luck":0,
+		"luck_value":0.0
+	},
+	"penetration":{
+		"min_penetration":1.0,
+		"max_penetration":20.0,
+		"penetration":0,
+		"penetration_value":0.0
+	},
+	"lifesteal":{
+		"min_lifesteal":0.0,
+		"max_lifesteal":55.0,
+		"lifesteal":0,
+		"lifesteal_value":0.0
+	},
+	"fist":{
+		"min_fist":1.0,
+		"max_fist":23.0,
+		"fist":0,
+		"fist_value":0.0
+	},
+	"godmod":{
+		"min_godmod":0.0,
+		"max_godmod":15.0,
+		"godmod":0,
+		"godmod_value":0.0
+	},
+	"size":{
+		"min_size":100.0,
+		"max_size":500.0,
+		"size":0,
+		"size_value":0.0
+	},
+	"camera":{
+		"min_camera":100.0,
+		"max_camera":300.0,
+		"camera":0,
+		"camera_value":0.0
 	}
 	
-	
-	
-	
-	
+
 }
 
 
-
-
-
-#health 
-var max_health = 100
-var min_health = 20
-var health = 1
-var pv_value
-
-#attack
-var max_attack = 35
-var min_attack = 7
-var attack = 1
-var att_value
-
-#defense
-var max_defense = 30
-var min_defense = 2
-var defense = 1
-var def_value
-
-#reload 
-var max_reload = 2.0
-var min_reload = 0.64
-var reload = 1
-var reload_value
-
-#shoot speed 
-var max_sspeed = 5000
-var min_sspeed = 1500
-var sspeed = 1
-var sspeed_value
-
-#duration 
-var max_duration = 35
-var min_duration = 7
-var duration = 1
-var duration_value
-
-#regen 
-var max_regen = 12
-var min_regen = 1
-var regen = 1
-var regen_value
-
-#speed 
-var max_speed = 1500
-var min_speed = 1500
-var speed = 1
-var speed_value
-
-#straf 
-var max_straf = 100
-var min_straf = 2
-var straf = 1
-var straf_value
-
-#sida 
-var max_sida = [15,15]
-var min_sida = [2,2]
-var sida = 1
-var sida_value
-
-#farmer 
-var max_farmer = 400
-var min_farmer = 00
-var farmer = 1
-var farmer_value
-
-#luck 
-var max_luck = 100
-var min_luck = 0
-var luck = 1
-var luck_value
-
-#penetration 
-var max_penetration = 15
-var min_penetration = 1
-var penetration = 1
-var penetration_value
-
-#lifesteal 
-var max_lifesteal = 50
-var min_lifesteal = 0
-var lifesteal = 15
-var lifesteal_value
-
-#fist 
-var max_fist = 40
-var min_fist = 5
-var fist = 1
-var fist_value
-
-#godmod 
-var max_godmod = 50
-var min_godmod = 5
-var godmod = 1
-var godmod_value
-
-#size 
-var max_size = 100
-var min_size = 2
-var size = 1
-var size_value
-
-#camera range
-var max_camera = 500
-var min_camera = 0
-var camera = 1
-var camera_value
-
 #degat_carre
-var degat_carre = 1
+var degat_carre = 10
 
 #degat_triangle
 var degat_triangle = 2
@@ -206,7 +162,8 @@ var class_up = {"1":["classe1","classe2","classe3"]} #Tableau de propostition de
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	_set_stat()
+	Stats["health"]["pv"] = Stats["health"]["health_value"]
 
 
 func _process(delta):
@@ -225,20 +182,29 @@ func _is_level_up(level):
 		for i in len(class_up[up_tree]):
 			if select_tank == i:
 				up_tree += str(i)
+		
 				
+func _update_stat():
+	for stat in Stats:
+		for attribut in Stats[stat]:
+			if attribut.ends_with("value"):
+				Stats[stat][attribut] = Stats[stat]["min_"+stat] + (((Stats[stat]["max_"+stat] - Stats[stat]["min_"+stat]) /15) * Stats[stat][stat])
+	print(Stats)
+		
+func _set_stat():
+	for stat in Stats:
+		for attribut in Stats[stat]:
+			if attribut == stat:
+				Stats[stat][attribut] = 10
+	_update_stat()
+	
 				
-func _set_stat(stat):
-	pv_value = min_health + ((max_health - min_health) * health)
-	att_value = min_attack + ((max_attack - min_attack) * attack)
-	pv_value = min_health + ((max_health - min_health) * health)
-	pv_value = min_health + ((max_health - min_health) * health)
-	pv_value = min_health + ((max_health - min_health) * health)
-	pv_value = min_health + ((max_health - min_health) * health)
-	pv_value = min_health + ((max_health - min_health) * health)
-	pv_value = min_health + ((max_health - min_health) * health)
+	
+
+
 	
 	
-	
+
 	
 	
 			

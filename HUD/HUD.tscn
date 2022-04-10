@@ -838,7 +838,7 @@ value = 90.0
 percent_visible = false
 
 [node name="Sprite" type="Sprite" parent="Panel/Body"]
-position = Vector2( 12.67, 12.4466 )
+position = Vector2( 13, 12 )
 scale = Vector2( 0.0364454, 0.0334117 )
 texture = ExtResource( 38 )
 
