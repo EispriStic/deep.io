@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=2]
+[gd_scene load_steps=62 format=2]
 
 [ext_resource path="res://Asset/HUD/Styles/Health_theme.tres" type="StyleBox" id=1]
 [ext_resource path="res://Asset/HUD/icone/hearth.png" type="Texture" id=2]
@@ -38,6 +38,7 @@
 [ext_resource path="res://Asset/HUD/Styles/camera.tres" type="StyleBox" id=36]
 [ext_resource path="res://Asset/HUD/Styles/fist.tres" type="StyleBox" id=37]
 [ext_resource path="res://Asset/HUD/icone/mur.png" type="Texture" id=38]
+[ext_resource path="res://HUD/HUD.gd" type="Script" id=39]
 
 [sub_resource type="StyleBoxFlat" id=14]
 draw_center = false
@@ -338,6 +339,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = -1.0
 margin_right = -1.0
+script = ExtResource( 39 )
 
 [node name="Panel" type="Panel" parent="."]
 margin_top = 28.0
@@ -853,3 +855,22 @@ text = "Skill point : "
 align = 1
 valign = 1
 uppercase = true
+
+[connection signal="pressed" from="Panel/Health" to="." method="_on_Health_pressed"]
+[connection signal="pressed" from="Panel/Attack" to="." method="_on_Attack_pressed"]
+[connection signal="pressed" from="Panel/Defense" to="." method="_on_Defense_pressed"]
+[connection signal="pressed" from="Panel/Reload" to="." method="_on_Reload_pressed"]
+[connection signal="pressed" from="Panel/sspeed" to="." method="_on_sspeed_pressed"]
+[connection signal="pressed" from="Panel/Duration" to="." method="_on_Duration_pressed"]
+[connection signal="pressed" from="Panel/Regen" to="." method="_on_Regen_pressed"]
+[connection signal="pressed" from="Panel/Speed" to="." method="_on_Speed_pressed"]
+[connection signal="pressed" from="Panel/Straff" to="." method="_on_Straff_pressed"]
+[connection signal="pressed" from="Panel/Sida" to="." method="_on_Sida_pressed"]
+[connection signal="pressed" from="Panel/Farmer" to="." method="_on_Farmer_pressed"]
+[connection signal="pressed" from="Panel/Luck" to="." method="_on_Luck_pressed"]
+[connection signal="pressed" from="Panel/Pentration" to="." method="_on_Pentration_pressed"]
+[connection signal="pressed" from="Panel/Lifesteal" to="." method="_on_Lifesteal_pressed"]
+[connection signal="pressed" from="Panel/Godmod" to="." method="_on_Godmod_pressed"]
+[connection signal="pressed" from="Panel/Size" to="." method="_on_Size_pressed"]
+[connection signal="pressed" from="Panel/Camera" to="." method="_on_Camera_pressed"]
+[connection signal="pressed" from="Panel/Body" to="." method="_on_Body_pressed"]
