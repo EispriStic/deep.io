@@ -11,3 +11,4 @@ func _physics_process(delta):
 	vie.set_max(Tank.Stats["health"]["health_value"])
 	vie.value = Tank.Stats["health"]["pv"]
 	print(Tank.Stats["health"]["health_value"])
+

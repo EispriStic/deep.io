@@ -22,4 +22,10 @@ texture = ExtResource( 1 )
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PoolVector2Array( 111, 108, 0, -103, -110, 108 )
 
+[node name="ProgressBar" type="ProgressBar" parent="."]
+margin_left = -422.0
+margin_top = 137.0
+margin_right = 417.0
+margin_bottom = 194.0
+
 [connection signal="body_entered" from="." to="." method="_on_Triangle_body_entered"]
