@@ -4,8 +4,7 @@ extends RigidBody2D
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-var carre_pv = 10
-
+var carre_pv = 20 
 
 
 # Called when the node enters the scene tree for the first time.
@@ -25,7 +24,6 @@ func _ready():
 	else:
 		position.x += coord_x 
 		position.y += coord_y
-	$ProgressBar.hide()
 
 func _process(delta):
 	$ProgressBar.value = carre_pv
@@ -35,6 +33,5 @@ func _process(delta):
 
 func _on_Carre_body_entered(body):
 	if body.is_in_group("Balles"):
-		carre_pv -= Tank.Stats["attack"]["attack_value"]
-		$ProgressBar.show()
+		carre_pv -= Tank.min_attack
 
