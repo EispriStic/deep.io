@@ -15,9 +15,9 @@ var bullet = preload("res://Balles/Balle_classic.tscn")
 
 
 func _process(delta):
-	var sante = Tank.pv
-	if Tank.pv <= 0 :
-		get_tree().change_scene("res://Menu/Menu.tscn")
+	#var sante = Tank.pv
+#	if Tank.pv <= 0 :
+#		get_tree().change_scene("res://Menu/Menu.tscn")
 	look_at(get_global_mouse_position())
 	
 	if Input.is_action_pressed("fire") and can_fire:
