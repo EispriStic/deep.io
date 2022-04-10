@@ -23,6 +23,7 @@ extends Node2D
 
 # Création de variables pour le démarrage de la partie 
 
+
 var Stats = {
 	
 	"health":{
@@ -138,32 +139,27 @@ var Stats = {
 
 }
 
-
-#degat_carre
 var degat_carre = 10
-
-#degat_triangle
-var degat_triangle = 2
-
-#degat_pentagone
-var degat_pentagone = 5
-
-#degat_hexagone
-var degat_hexagone = 8
+var degat_triangle = 15
+var degat_pentagone = 20
+var degat_hexagone = 25
 
 
 #xp : xp
 #level: max_level, level
 var xp = 0
 var level = 0
+
+var class_up = {}
 var up_tree = "1"
 
-var class_up = {"1":["classe1","classe2","classe3"]} #Tableau de propostition de classe
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	_set_stat()
 	Stats["health"]["pv"] = Stats["health"]["health_value"]
+
 
 
 func _process(delta):
@@ -210,4 +206,5 @@ func _set_stat():
 			
 	
 	
+
 
