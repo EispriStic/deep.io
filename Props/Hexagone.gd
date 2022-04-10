@@ -21,11 +21,6 @@ func _ready():
 	
 		
 func _process(delta):
-	if hexagone_pv >= 1 :
-		$ProgressBar.hide()
-	else : 
-		$ProgressBar.show()
-	$ProgressBar.value = hexagone_pv
 	if hexagone_pv <= 0 :
 		queue_free()
 
