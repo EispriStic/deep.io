@@ -27,15 +27,15 @@ extends Node2D
 var Stats = {
 	
 	"health":{
-		"min_health":20.0,
-		"max_health":100.0,
+		"min_health":35.0,
+		"max_health":150.0,
 		"health":0,
 		"health_value":0.0,
 		"pv":0.0
 	},
 	"attack":{
-		"min_attack":2.0,
-		"max_attack":12.0,
+		"min_attack":4.0,
+		"max_attack":16.0,
 		"attack":0,
 		"attack_value":00
 	},
@@ -46,32 +46,32 @@ var Stats = {
 		"defense_value":0.0
 	},
 	"reload":{
-		"min_reload":1.35,
-		"max_reload":0.02,
+		"min_reload":50.0,
+		"max_reload":2.0,
 		"reload":0,
 		"reload_value":0.0
 	},
 	"shoot_speed":{
-		"min_shoot_speed":1500.0,
-		"max_shoot_speed":5000.0,
+		"min_shoot_speed":1800.0,
+		"max_shoot_speed":7500.0,
 		"shoot_speed":0,
 		"shoot_speed_value":0.0
 	},
 	"duration":{
-		"min_duration":3.0,
+		"min_duration":0.5,
 		"max_duration":10.0,
 		"duration":0,
 		"duration_value":0.0
 	},
 	"regen":{
-		"min_regen":1.0,
-		"max_regen":6.0,
+		"min_regen":2.0,
+		"max_regen":15.0,
 		"regen":0,
 		"regen_value":0.0
 	},
 	"speed":{
-		"min_speed":500.0,
-		"max_speed":1500.0,
+		"min_speed":850.0,
+		"max_speed":3500.0,
 		"speed":0,
 		"speed_value":0.0
 	},
@@ -107,7 +107,7 @@ var Stats = {
 	},
 	"lifesteal":{
 		"min_lifesteal":0.0,
-		"max_lifesteal":55.0,
+		"max_lifesteal":0.05,
 		"lifesteal":0,
 		"lifesteal_value":0.0
 	},
@@ -153,6 +153,7 @@ var level = 0
 var class_up = {}
 var up_tree = "1"
 
+var pos = Vector2(0,0)
 
 
 # Called when the node enters the scene tree for the first time.
@@ -191,7 +192,7 @@ func _set_stat():
 	for stat in Stats:
 		for attribut in Stats[stat]:
 			if attribut == stat:
-				Stats[stat][attribut] = 10
+				Stats[stat][attribut] = 0
 	_update_stat()
 	
 				

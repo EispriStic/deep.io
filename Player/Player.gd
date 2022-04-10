@@ -11,6 +11,7 @@ extends KinematicBody2D
 var velocity = Vector2()
 var can_fire = true
 var can_regen = true
+var timer = 0
 
 var bullet = preload("res://Balles/Balle_classic.tscn")
 
@@ -21,15 +22,13 @@ func _process(delta):
 #		get_tree().change_scene("res://Menu/Menu.tscn")
 	look_at(get_global_mouse_position())
 	
-	if Input.is_action_pressed("fire") and can_fire:
+	if Input.is_action_pressed("fire") and timer >= Tank.Stats["reload"]["reload_value"]:
 		var bullet_instance = bullet.instance()
 		bullet_instance.position = $Bullet_point.get_global_position()
 		bullet_instance.rotation_degrees = rotation_degrees
 		bullet_instance.apply_impulse(Vector2(), Vector2(Tank.Stats["shoot_speed"]["shoot_speed_value"], 0 ).rotated(rotation))
 		get_tree().get_root().add_child(bullet_instance)
-		can_fire = false
-		yield(get_tree().create_timer(Tank.Stats["reload"]["reload_value"]),"timeout")
-		can_fire = true
+		timer = 0.0
 	
 	if Tank.Stats["health"]["pv"] < Tank.Stats["health"]["health_value"] and can_regen:
 		Tank.Stats["health"]["pv"] += Tank.Stats["regen"]["regen_value"]
@@ -39,6 +38,9 @@ func _process(delta):
 	
 	if Tank.Stats["health"]["pv"]<=0:
 		get_tree().change_scene("res://Menu/Menu.tscn")
+		
+	Tank.pos = position
+	timer += 1
 		
 		
 		
@@ -62,8 +64,7 @@ func _on_Hitbox_body_entered(body):
 		Tank.Stats["health"]["pv"]  -= Tank.degat_triangle
 	if body.is_in_group("Pentagone"):
 		Tank.Stats["health"]["pv"]  -= Tank.degat_pentagone
-	
-	
+
 #	var direction = Vector2()
 #	if Input.is_action_pressed('right') :
 #		direction += Vector2(1,0)

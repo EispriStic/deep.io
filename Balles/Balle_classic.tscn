@@ -8,10 +8,11 @@ radius = 46.0001
 height = 0.0
 
 [node name="Balle_classic" type="RigidBody2D" groups=["Balles"]]
-mass = 0.12
+mass = 0.61
 gravity_scale = 0.0
 contacts_reported = 1
 contact_monitor = true
+angular_damp = 1.2
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -25,7 +26,7 @@ rotation = -1.57079
 shape = SubResource( 1 )
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 1.5
 one_shot = true
 autostart = true
 

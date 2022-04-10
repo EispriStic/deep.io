@@ -10,6 +10,7 @@ var carre_pv = 10
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$ProgressBar.set_max(carre_pv)
 	var coord_x = (randi() % 54000) - 27715
 	var coord_y = (randi() % 54000) - 27715
 	if -7500 < coord_x and coord_x < 0 :
@@ -36,5 +37,8 @@ func _process(delta):
 func _on_Carre_body_entered(body):
 	if body.is_in_group("Balles"):
 		carre_pv -= Tank.Stats["attack"]["attack_value"]
+		if Tank.Stats["health"]["pv"] < Tank.Stats["health"]["health_value"]:
+			Tank.Stats["health"]["pv"] += (Tank.Stats["attack"]["attack_value"] * Tank.Stats["lifesteal"]["lifesteal_value"])
+			print(Tank.Stats["health"]["pv"])
 		$ProgressBar.show()
 
