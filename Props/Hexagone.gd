@@ -4,7 +4,8 @@ extends RigidBody2D
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-var hexagone_pv = 50
+var hexagone_pv = 800
+var hexagone_xp = 17500
 
 # Called when the node enters the scene tree for the first time.
 # Ne pas toucher // Fonction pour la génération random des cubes d'xp
@@ -24,6 +25,7 @@ func _ready():
 func _process(delta):
 	$ProgressBar.value = hexagone_pv
 	if hexagone_pv <= 0 :
+		Tank.xp += hexagone_xp
 		queue_free()
 
 

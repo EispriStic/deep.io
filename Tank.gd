@@ -139,19 +139,22 @@ var Stats = {
 
 }
 
-var degat_carre = 10
-var degat_triangle = 15
-var degat_pentagone = 20
+var degat_carre = 2
+var degat_triangle = 5
+var degat_pentagone = 15
 var degat_hexagone = 25
-
 
 #xp : xp
 #level: max_level, level
-var xp = 0
-var level = 0
+onready var xp = 0
+onready var level = 1
+onready var xp_need = 25+level*(1+level)
 
-var class_up = {}
+var class_up = {"1":["Dual_tank"]}
 var up_tree = "1"
+var level_up_refer = [15,30,45,60,85,100]
+var befor_evolve = []
+var current_select = false
 
 var pos = Vector2(0,0)
 
@@ -164,21 +167,26 @@ func _ready():
 
 
 func _process(delta):
-	var xp_require = 0
+	xp_need = 25*(level+1)*(1+level+1)
+	_is_level_up()
+	_update_tank()
+	
 
-	if xp > xp_require :
-		level += 1
-		xp = 0
-		_is_level_up(level)
+
 		
-func _is_level_up(level):
-	var level_up_refer = [20,30,40,50] 
-	if level in level_up_refer: 
-		var possible_evolution = class_up[up_tree]
-		var select_tank 
-		for i in len(class_up[up_tree]):
-			if select_tank == i:
-				up_tree += str(i)
+func _is_level_up():
+	xp_need = 25*(level+1)*(1+(level+1))
+	if xp >= xp_need:
+		var gain = 0
+		while xp >= xp_need:
+			level += 1
+			xp_need = 25*(level+1)*(1+(level+1))
+			xp -= xp_need
+		
+		print(xp_need)
+		print(level)
+		xp = xp
+	return level
 		
 				
 func _update_stat():
@@ -195,6 +203,22 @@ func _set_stat():
 				Stats[stat][attribut] = 0
 	_update_stat()
 	
+func _update_tank():
+	if level >= level_up_refer[len(up_tree) - 1]:
+		if len(befor_evolve) < len(up_tree):
+			befor_evolve.append(up_tree[len(up_tree) - 1])
+		print(befor_evolve)
+		if befor_evolve[len(befor_evolve)-1] == up_tree:
+			current_select = true
+		else:
+			current_select = false
+
+
+func _tank_choice(node):
+	node.hide()
+	
+		
+		
 				
 	
 

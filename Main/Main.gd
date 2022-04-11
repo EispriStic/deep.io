@@ -48,5 +48,15 @@ func _process(delta):
 	else:
 		pass
 	nombre_props += 1 
+	
+	if Tank.current_select:
+		$Button.text = Tank.class_up[Tank.up_tree][0]
+		$Button.enabled
+		
 		
 
+
+
+func _on_Button_pressed():
+	Tank.up_tree += "1"
+	Tank._tank_choice($Button)

@@ -23,3 +23,11 @@ margin_top = -3561.0
 margin_right = 3317.0
 margin_bottom = -3318.0
 rect_scale = Vector2( 5, 5 )
+
+[node name="Button" type="Button" parent="."]
+margin_left = 3274.0
+margin_top = -420.0
+margin_right = 3987.0
+margin_bottom = 49.0
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

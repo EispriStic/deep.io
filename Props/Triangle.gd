@@ -4,7 +4,8 @@ extends RigidBody2D
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-var triangle_pv = 50
+var triangle_pv = 25
+var triangle_xp = 125
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -30,6 +31,7 @@ func _ready():
 func _process(delta):
 	$ProgressBar.value = triangle_pv
 	if triangle_pv <= 0 :
+		Tank.xp += triangle_xp
 		queue_free()
 
 
