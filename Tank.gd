@@ -150,13 +150,15 @@ onready var xp = 0
 onready var level = 1
 onready var xp_need = 25+level*(1+level)
 
-var class_up = {"1":["Dual_tank"]}
-var up_tree = "1"
+var class_up = {"0":"Tank_de_base", "01":"Tank_test", "02":"Autre_tank"}
+var up_tree = "0"
 var level_up_refer = [15,30,45,60,85,100]
 var befor_evolve = []
 var current_select = false
 
+var spawn_tank
 var pos = Vector2(0,0)
+
 
 
 # Called when the node enters the scene tree for the first time.
@@ -170,6 +172,8 @@ func _process(delta):
 	xp_need = 25*(level+1)*(1+level+1)
 	_is_level_up()
 	_update_tank()
+
+
 	
 
 
@@ -207,15 +211,18 @@ func _update_tank():
 	if level >= level_up_refer[len(up_tree) - 1]:
 		if len(befor_evolve) < len(up_tree):
 			befor_evolve.append(up_tree[len(up_tree) - 1])
-		print(befor_evolve)
 		if befor_evolve[len(befor_evolve)-1] == up_tree:
 			current_select = true
-		else:
-			current_select = false
 
 
 func _tank_choice(node):
 	node.hide()
+	
+func change_tank(node, arg):
+	var new_tank = load("res://Player/"+class_up[up_tree]+".tscn").instance()
+	for i in node.get_children():
+		node.remove_child(i)
+	node.add_child(new_tank)
 	
 		
 		

@@ -15,6 +15,9 @@ var timer = 0
 
 var bullet = preload("res://Balles/Balle_classic.tscn")
 
+func _ready():
+	Tank._update_stat()
+	position = Tank.pos
 
 func _process(delta):
 	#var sante = Tank.pv
@@ -39,15 +42,15 @@ func _process(delta):
 	if Tank.Stats["health"]["pv"]<=0:
 		get_tree().change_scene("res://Menu/Menu.tscn")
 		
-	Tank.pos = position
 	timer += 1
+	Tank.pos = position
 		
 		
 		
 		
 func _physics_process(delta):
-	velocity.x = (int(Input.is_action_pressed('right')) - int(Input.is_action_pressed('left'))) *Tank.Stats["speed"]["speed_value"]
-	velocity.y = (int(Input.is_action_pressed('down')) - int(Input.is_action_pressed('up'))) *Tank.Stats["speed"]["speed_value"]
+	velocity.x = (int(Input.is_action_pressed('right')) - int(Input.is_action_pressed('left'))) *Tank.Stats["speed"]["speed_value"]*2
+	velocity.y = (int(Input.is_action_pressed('down')) - int(Input.is_action_pressed('up'))) *Tank.Stats["speed"]["speed_value"]*2
 	velocity.normalized()
 	var push = 100
 	move_and_slide(velocity, Vector2(0,0),false, 1, 0, false)

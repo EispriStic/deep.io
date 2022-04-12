@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://Player/tank_de_base.gd" type="Script" id=1]
-[ext_resource path="res://Asset/Player/tank.png" type="Texture" id=2]
+[ext_resource path="res://Player/Tank_de_test.gd" type="Script" id=1]
+[ext_resource path="res://Asset/Player/Tank_test.png" type="Texture" id=2]
 [ext_resource path="res://Barre_de_vie/Barre_de_vie.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Barre_dxp/Barre_dxp.tscn" type="PackedScene" id=4]
 
@@ -30,7 +30,7 @@ radius = 154.672
 [sub_resource type="CircleShape2D" id=2]
 radius = 124.016
 
-[node name="Tank_de_test" type="KinematicBody2D" groups=["Tank"]]
+[node name="Tank_test" type="KinematicBody2D" groups=["Tank"]]
 collision/safe_margin = 0.001
 script = ExtResource( 1 )
 
@@ -62,8 +62,8 @@ shape = SubResource( 2 )
 position = Vector2( 68, 0 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 1, -10 )
-scale = Vector2( 0.352083, 0.360648 )
+position = Vector2( 2, 3 )
+scale = Vector2( 0.639583, 0.656887 )
 z_index = 1
 texture = ExtResource( 2 )
 

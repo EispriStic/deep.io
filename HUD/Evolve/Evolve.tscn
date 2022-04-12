@@ -1,0 +1,77 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Asset/HUD/Styles/button/hovver.tres" type="StyleBox" id=1]
+[ext_resource path="res://Asset/HUD/Styles/button/evolve.tres" type="StyleBox" id=2]
+[ext_resource path="res://HUD/Evolve/Evolve.gd" type="Script" id=3]
+[ext_resource path="res://Asset/Player/Tank_test.png" type="Texture" id=4]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 1, 1, 1, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0, 0, 0, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 20
+
+[node name="Evolve" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+
+[node name="Panel" type="Panel" parent="."]
+margin_left = 57.0
+margin_top = 25.0
+margin_right = 403.0
+margin_bottom = 318.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="Button" type="Button" parent="Panel"]
+margin_left = 17.0
+margin_top = 13.0
+margin_right = 168.0
+margin_bottom = 142.0
+custom_styles/hover = ExtResource( 1 )
+custom_styles/pressed = ExtResource( 2 )
+custom_styles/normal = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="Panel/Button"]
+position = Vector2( 75, 61 )
+scale = Vector2( 0.276042, 0.25 )
+texture = ExtResource( 4 )
+
+[node name="Button2" type="Button" parent="Panel"]
+margin_left = 178.0
+margin_top = 151.0
+margin_right = 329.0
+margin_bottom = 280.0
+custom_styles/hover = ExtResource( 1 )
+custom_styles/pressed = ExtResource( 2 )
+custom_styles/normal = ExtResource( 2 )
+
+[node name="Button3" type="Button" parent="Panel"]
+margin_left = 17.0
+margin_top = 151.0
+margin_right = 168.0
+margin_bottom = 280.0
+custom_styles/hover = ExtResource( 1 )
+custom_styles/pressed = ExtResource( 2 )
+custom_styles/normal = ExtResource( 2 )
+
+[node name="Button4" type="Button" parent="Panel"]
+margin_left = 177.0
+margin_top = 14.0
+margin_right = 328.0
+margin_bottom = 143.0
+custom_styles/hover = ExtResource( 1 )
+custom_styles/pressed = ExtResource( 2 )
+custom_styles/normal = ExtResource( 2 )
+
+[connection signal="pressed" from="Panel/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Panel/Button2" to="." method="_on_Button2_pressed"]
+[connection signal="pressed" from="Panel/Button3" to="." method="_on_Button3_pressed"]
+[connection signal="pressed" from="Panel/Button4" to="." method="_on_Button4_pressed"]

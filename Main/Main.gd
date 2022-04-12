@@ -17,6 +17,12 @@ var timer_p = 5.0
 var time_h = 0.0
 var timer_h = 5.0
 
+func _ready():
+	var string = "res://Player/"+Tank.class_up["0"]+".tscn"
+	var tank_de_base = load(string).instance()
+	$Tank_spawn.add_child(tank_de_base)
+	Tank.spawn_tank = $Tank_spawn
+
 func _process(delta):
 	if nombre_props < 10000 :
 		if time_c > timer_c:
@@ -48,15 +54,6 @@ func _process(delta):
 	else:
 		pass
 	nombre_props += 1 
-	
-	if Tank.current_select:
-		$Button.text = Tank.class_up[Tank.up_tree][0]
-		$Button.enabled
+
 		
 		
-
-
-
-func _on_Button_pressed():
-	Tank.up_tree += "1"
-	Tank._tank_choice($Button)
