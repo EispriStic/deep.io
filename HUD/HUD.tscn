@@ -791,6 +791,7 @@ margin_left = 865.0
 margin_top = 10.0
 margin_right = 1011.0
 margin_bottom = 47.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 0.933333, 0.113725, 0.113725, 1 )
 custom_styles/normal = SubResource( 22 )
 text = "Skill point : "
@@ -812,8 +813,8 @@ uppercase = true
 [connection signal="pressed" from="Panel/Luck" to="." method="_on_Luck_pressed"]
 [connection signal="pressed" from="Panel/Penetration" to="." method="_on_Pentration_pressed"]
 [connection signal="pressed" from="Panel/Lifesteal" to="." method="_on_Lifesteal_pressed"]
-[connection signal="pressed" from="Panel/Fist" to="." method="_on_Fite_pressed"]
 [connection signal="pressed" from="Panel/Fist" to="." method="_on_Fist_pressed"]
+[connection signal="pressed" from="Panel/Fist" to="." method="_on_Fite_pressed"]
 [connection signal="pressed" from="Panel/Godmod" to="." method="_on_Godmod_pressed"]
 [connection signal="pressed" from="Panel/Size" to="." method="_on_Size_pressed"]
 [connection signal="pressed" from="Panel/Camera" to="." method="_on_Camera_pressed"]

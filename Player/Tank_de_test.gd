@@ -25,7 +25,7 @@ func _process(delta):
 #		get_tree().change_scene("res://Menu/Menu.tscn")
 	$Sprite.look_at(get_global_mouse_position())
 	
-	if Input.is_action_pressed("fire") and timer >= Tank.Stats["reload"]["reload_value"]:
+	if Input.is_action_pressed("fire") and timer >= (Tank.Stats["reload"]["max_reload"] + 6.0) - (Tank.Stats["reload"]["reload_value"]):
 		var bullet_instance = bullet.instance()
 		bullet_instance.position = $Sprite/Bullet_point.get_global_position()
 		bullet_instance.rotation_degrees = $Sprite.rotation_degrees
@@ -78,3 +78,4 @@ func _on_Hitbox_body_entered(body):
 #	if Input.is_action_pressed('down') :
 #		direction += Vector2(0,1)
 #	move_and_slide(direction * speed)
+

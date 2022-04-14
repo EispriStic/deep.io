@@ -5,7 +5,7 @@ extends RigidBody2D
 # var a = 2
 # var b = "text"
 var pentagone_pv = 80
-var pentagone_xp = 2500
+var pentagone_xp = 4500
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

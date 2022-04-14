@@ -47,7 +47,7 @@ var Stats = {
 	},
 	"reload":{
 		"min_reload":2.0,
-		"max_reload":50.0,
+		"max_reload":40.0,
 		"reload":0,
 		"reload_value":0.0
 	},
@@ -158,6 +158,7 @@ var current_select = false
 
 var spawn_tank
 var pos = Vector2(0,0)
+var point = 0
 
 
 
@@ -184,6 +185,7 @@ func _is_level_up():
 		var gain = 0
 		while xp >= xp_need:
 			level += 1
+			point += 1
 			xp_need = 25*(level+1)*(1+(level+1))
 			xp -= xp_need
 		

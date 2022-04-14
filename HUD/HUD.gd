@@ -65,110 +65,83 @@ func _process(delta):
 	$Panel/Godmod/ProgressBar.value = Tank.Stats["godmod"]["godmod_value"]
 	$Panel/Size/ProgressBar.value = Tank.Stats["size"]["size_value"]
 	$Panel/Camera/ProgressBar.value = Tank.Stats["camera"]["camera_value"]
+	$Label.text = "Skill points : " + str(Tank.point)
 
+
+func _add_stat(arg):
+	if(Tank.Stats[arg][arg+"_value"] < Tank.Stats[arg]["max_"+arg] and Tank.point > 0  ):
+		Tank.Stats[arg][arg] += 1 
+		Tank._update_stat()
+		Tank.point -= 1
 
 func _on_Health_pressed():
-	if(Tank.Stats["health"]["health_value"] < Tank.Stats["health"]["max_health"]):
-		Tank.Stats["health"]["health"] += 1 
-		Tank._update_stat()
+	_add_stat("health")
 
 
 func _on_Attack_pressed():
-	if(Tank.Stats["attack"]["attack_value"] < Tank.Stats["attack"]["max_attack"]):
-		Tank.Stats["attack"]["attack"] += 1 
-		Tank._update_stat()
+	_add_stat("attack")
 
 
 func _on_Defense_pressed():
-	if(Tank.Stats["defense"]["defense_value"] < Tank.Stats["defense"]["max_defense"]):
-		Tank.Stats["defense"]["defense"] += 1 
-		Tank._update_stat()
+	_add_stat("defense")
 
 
 func _on_Reload_pressed():
-	if(Tank.Stats["reload"]["reload_value"] < Tank.Stats["reload"]["max_reload"]):
-		Tank.Stats["reload"]["reload"] += 1 
-		Tank._update_stat()
+	_add_stat("reload")
 
 
 func _on_sspeed_pressed():
-	if(Tank.Stats["shoot_speed"]["shoot_speed_value"] < Tank.Stats["shoot_speed"]["max_shoot_speed"]):
-		Tank.Stats["shoot_speed"]["shoot_speed"] += 1 
-		Tank._update_stat()
+	_add_stat("shoot_speed")
 
 
 func _on_Duration_pressed():
-	if(Tank.Stats["duration"]["duration_value"] < Tank.Stats["duration"]["max_duration"]):
-		Tank.Stats["duration"]["duration"] += 1 
-		Tank._update_stat()
+	_add_stat("duration")
 
 
 func _on_Regen_pressed():
-	if(Tank.Stats["regen"]["regen_value"] < Tank.Stats["regen"]["max_regen"]):
-		Tank.Stats["regen"]["regen"] += 1 
-		Tank._update_stat()
+	_add_stat("regen")
 
 
 func _on_Speed_pressed():
-	if(Tank.Stats["speed"]["speed_value"] < Tank.Stats["speed"]["max_speed"]):
-		Tank.Stats["speed"]["speed"] += 1 
-		Tank._update_stat()
+	_add_stat("speed")
 
 
 func _on_Straff_pressed():
-	if(Tank.Stats["straff"]["straff_value"] < Tank.Stats["straff"]["max_straff"]):
-		Tank.Stats["straff"]["straff"] += 1 
-		Tank._update_stat()
+	_add_stat("straff")
 
 
 func _on_Sida_pressed():
-	if(Tank.Stats["sida"]["sida_value"] < Tank.Stats["sida"]["max_sida"]):
-		Tank.Stats["sida"]["sida"] += 1 
-		Tank._update_stat()
+	_add_stat("sida")
 
 
 func _on_Farmer_pressed():
-	if(Tank.Stats["farmer"]["farmer_value"] < Tank.Stats["farmer"]["max_farmer"]):
-		Tank.Stats["farmer"]["farmer"] += 1 
-		Tank._update_stat()
+	_add_stat("farmer")
 
 
 func _on_Luck_pressed():
-	if(Tank.Stats["luck"]["luck_value"] < Tank.Stats["luck"]["max_luck"]):
-		Tank.Stats["luck"]["luck"] += 1 
-		Tank._update_stat()
-
+	_add_stat("luck")
 
 func _on_Pentration_pressed():
-	if(Tank.Stats["penetration"]["penetration_value"] < Tank.Stats["penetration"]["max_penetration"]):
-		Tank.Stats["penetration"]["penetration"] += 1 
-		Tank._update_stat()
+	_add_stat("penetration")
 
 
 func _on_Lifesteal_pressed():
-	if(Tank.Stats["lifesteal"]["lifesteal_value"] < Tank.Stats["lifesteal"]["max_lifesteal"]):
-		Tank.Stats["lifesteal"]["lifesteal"] += 1 
-		Tank._update_stat()
+	_add_stat("lifesteal")
 
 
 func _on_Godmod_pressed():
-	if(Tank.Stats["godmod"]["godmod_value"] < Tank.Stats["godmod"]["max_godmod"]):
-		Tank.Stats["godmod"]["godmod"] += 1 
-		Tank._update_stat()
-
+	_add_stat("godmod")
 
 func _on_Size_pressed():
-	if(Tank.Stats["size"]["size_value"] < Tank.Stats["size"]["max_size"]):
-		Tank.Stats["size"]["size"] += 1 
-		Tank._update_stat()
+	_add_stat("size")
 
 
 func _on_Camera_pressed():
-	if(Tank.Stats["camera"]["camera_value"] < Tank.Stats["camera"]["max_camera"]):
-		Tank.Stats["camera"]["camera"] += 1 
-		Tank._update_stat()
+	_add_stat("camera")
 
 func _on_Fist_pressed():
-	if(Tank.Stats["fist"]["fist_value"] < Tank.Stats["fist"]["max_fist"]):
-		Tank.Stats["fist"]["fist"] += 1 
-		Tank._update_stat()
+	_add_stat("fist")
+
+	
+	
+
