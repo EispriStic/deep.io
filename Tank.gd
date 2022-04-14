@@ -46,8 +46,8 @@ var Stats = {
 		"defense_value":0.0
 	},
 	"reload":{
-		"min_reload":50.0,
-		"max_reload":2.0,
+		"min_reload":2.0,
+		"max_reload":50.0,
 		"reload":0,
 		"reload_value":0.0
 	},
@@ -75,11 +75,11 @@ var Stats = {
 		"speed":0,
 		"speed_value":0.0
 	},
-	"straf":{
-		"min_straf":0.0,
-		"max_straf":100.0,
-		"straf":0,
-		"straf_value":0.0
+	"straff":{
+		"min_straff":0.0,
+		"max_straff":100.0,
+		"straff":0,
+		"straff_value":0.0
 	},
 	"sida":{
 		"min_sida":0.0,
@@ -107,7 +107,7 @@ var Stats = {
 	},
 	"lifesteal":{
 		"min_lifesteal":0.0,
-		"max_lifesteal":0.05,
+		"max_lifesteal":0.15,
 		"lifesteal":0,
 		"lifesteal_value":0.0
 	},

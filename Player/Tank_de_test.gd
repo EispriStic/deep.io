@@ -23,13 +23,13 @@ func _process(delta):
 	#var sante = Tank.pv
 #	if Tank.pv <= 0 :
 #		get_tree().change_scene("res://Menu/Menu.tscn")
-	look_at(get_global_mouse_position())
+	$Sprite.look_at(get_global_mouse_position())
 	
 	if Input.is_action_pressed("fire") and timer >= Tank.Stats["reload"]["reload_value"]:
 		var bullet_instance = bullet.instance()
-		bullet_instance.position = $Bullet_point.get_global_position()
-		bullet_instance.rotation_degrees = rotation_degrees
-		bullet_instance.apply_impulse(Vector2(), Vector2(Tank.Stats["shoot_speed"]["shoot_speed_value"], 0 ).rotated(rotation))
+		bullet_instance.position = $Sprite/Bullet_point.get_global_position()
+		bullet_instance.rotation_degrees = $Sprite.rotation_degrees
+		bullet_instance.apply_impulse(Vector2(), Vector2(Tank.Stats["shoot_speed"]["shoot_speed_value"], 0 ).rotated($Sprite.rotation))
 		get_tree().get_root().add_child(bullet_instance)
 		timer = 0.0
 	
@@ -49,8 +49,8 @@ func _process(delta):
 		
 		
 func _physics_process(delta):
-	velocity.x = (int(Input.is_action_pressed('right')) - int(Input.is_action_pressed('left'))) *Tank.Stats["speed"]["speed_value"]*2
-	velocity.y = (int(Input.is_action_pressed('down')) - int(Input.is_action_pressed('up'))) *Tank.Stats["speed"]["speed_value"]*2
+	velocity.x = (int(Input.is_action_pressed('right')) - int(Input.is_action_pressed('left'))) *Tank.Stats["speed"]["speed_value"]
+	velocity.y = (int(Input.is_action_pressed('down')) - int(Input.is_action_pressed('up'))) *Tank.Stats["speed"]["speed_value"]
 	velocity.normalized()
 	var push = 100
 	move_and_slide(velocity, Vector2(0,0),false, 1, 0, false)
@@ -78,5 +78,3 @@ func _on_Hitbox_body_entered(body):
 #	if Input.is_action_pressed('down') :
 #		direction += Vector2(0,1)
 #	move_and_slide(direction * speed)
-
-

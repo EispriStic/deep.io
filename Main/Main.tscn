@@ -1,9 +1,7 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Map/Map.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Main/Main.gd" type="Script" id=3]
-[ext_resource path="res://HUD/HUD.tscn" type="PackedScene" id=4]
-[ext_resource path="res://HUD/Evolve/Evolve.tscn" type="PackedScene" id=5]
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 3 )
@@ -14,20 +12,6 @@ z_index = -1
 
 [node name="SpawnProps" type="Node2D" parent="."]
 z_index = 2
-
-[node name="HUD" parent="." instance=ExtResource( 4 )]
-margin_left = 2234.0
-margin_top = -3561.0
-margin_right = 3317.0
-margin_bottom = -3318.0
-rect_scale = Vector2( 5, 5 )
-
-[node name="Evolve" parent="." instance=ExtResource( 5 )]
-margin_left = 3823.0
-margin_top = -3396.0
-margin_right = 3823.0
-margin_bottom = -3396.0
-rect_scale = Vector2( 2, 2 )
 
 [node name="Tank_spawn" type="Node2D" parent="."]
 position = Vector2( 5497, -7152 )

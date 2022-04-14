@@ -367,7 +367,6 @@ margin_right = 217.0
 margin_bottom = 21.0
 custom_styles/fg = SubResource( 1 )
 custom_styles/bg = SubResource( 2 )
-value = 20.0
 percent_visible = false
 
 [node name="Sprite" type="Sprite" parent="Panel/Health"]
@@ -642,7 +641,7 @@ position = Vector2( 14, 12 )
 scale = Vector2( 0.0345107, 0.0329787 )
 texture = ExtResource( 20 )
 
-[node name="Pentration" type="Button" parent="Panel"]
+[node name="Penetration" type="Button" parent="Panel"]
 margin_left = 12.0
 margin_top = 357.0
 margin_right = 38.0
@@ -651,7 +650,7 @@ custom_styles/hover = ExtResource( 40 )
 custom_styles/pressed = ExtResource( 26 )
 custom_styles/normal = ExtResource( 26 )
 
-[node name="ProgressBar" type="ProgressBar" parent="Panel/Pentration"]
+[node name="ProgressBar" type="ProgressBar" parent="Panel/Penetration"]
 margin_left = 32.0
 margin_top = 5.0
 margin_right = 217.0
@@ -661,7 +660,7 @@ custom_styles/bg = SubResource( 2 )
 value = 31.0
 percent_visible = false
 
-[node name="Sprite" type="Sprite" parent="Panel/Pentration"]
+[node name="Sprite" type="Sprite" parent="Panel/Penetration"]
 position = Vector2( 12, 12 )
 scale = Vector2( 0.116128, 0.108245 )
 texture = ExtResource( 33 )
@@ -690,7 +689,7 @@ position = Vector2( 13, 12 )
 scale = Vector2( 0.0346263, 0.0345912 )
 texture = ExtResource( 34 )
 
-[node name="Fite" type="Button" parent="Panel"]
+[node name="Fist" type="Button" parent="Panel"]
 margin_left = 12.0
 margin_top = 417.0
 margin_right = 38.0
@@ -699,7 +698,7 @@ custom_styles/hover = ExtResource( 47 )
 custom_styles/pressed = ExtResource( 37 )
 custom_styles/normal = ExtResource( 37 )
 
-[node name="ProgressBar" type="ProgressBar" parent="Panel/Fite"]
+[node name="ProgressBar" type="ProgressBar" parent="Panel/Fist"]
 margin_left = 32.0
 margin_top = 5.0
 margin_right = 217.0
@@ -709,7 +708,7 @@ custom_styles/bg = SubResource( 2 )
 value = 100.0
 percent_visible = false
 
-[node name="Sprite" type="Sprite" parent="Panel/Fite"]
+[node name="Sprite" type="Sprite" parent="Panel/Fist"]
 position = Vector2( 12, 12 )
 scale = Vector2( 0.0163595, 0.0168239 )
 texture = ExtResource( 31 )
@@ -811,9 +810,10 @@ uppercase = true
 [connection signal="pressed" from="Panel/Sida" to="." method="_on_Sida_pressed"]
 [connection signal="pressed" from="Panel/Farmer" to="." method="_on_Farmer_pressed"]
 [connection signal="pressed" from="Panel/Luck" to="." method="_on_Luck_pressed"]
-[connection signal="pressed" from="Panel/Pentration" to="." method="_on_Pentration_pressed"]
+[connection signal="pressed" from="Panel/Penetration" to="." method="_on_Pentration_pressed"]
 [connection signal="pressed" from="Panel/Lifesteal" to="." method="_on_Lifesteal_pressed"]
-[connection signal="pressed" from="Panel/Fite" to="." method="_on_Fite_pressed"]
+[connection signal="pressed" from="Panel/Fist" to="." method="_on_Fite_pressed"]
+[connection signal="pressed" from="Panel/Fist" to="." method="_on_Fist_pressed"]
 [connection signal="pressed" from="Panel/Godmod" to="." method="_on_Godmod_pressed"]
 [connection signal="pressed" from="Panel/Size" to="." method="_on_Size_pressed"]
 [connection signal="pressed" from="Panel/Camera" to="." method="_on_Camera_pressed"]
