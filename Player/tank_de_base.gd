@@ -23,14 +23,13 @@ func _process(delta):
 	#var sante = Tank.pv
 #	if Tank.pv <= 0 :
 #		get_tree().change_scene("res://Menu/Menu.tscn")
-	
-	$Sprite.look_at(get_global_mouse_position())
+	look_at(get_global_mouse_position())
 	
 	if Input.is_action_pressed("fire") and timer >= Tank.Stats["reload"]["reload_value"]:
 		var bullet_instance = bullet.instance()
-		bullet_instance.position = $Sprite/Bullet_point.get_global_position()
-		bullet_instance.rotation_degrees = $Sprite.rotation_degrees
-		bullet_instance.apply_impulse(Vector2(), Vector2(Tank.Stats["shoot_speed"]["shoot_speed_value"], 0 ).rotated($Sprite.rotation))
+		bullet_instance.position = $Bullet_point.get_global_position()
+		bullet_instance.rotation_degrees = rotation_degrees
+		bullet_instance.apply_impulse(Vector2(), Vector2(Tank.Stats["shoot_speed"]["shoot_speed_value"], 0 ).rotated(rotation))
 		get_tree().get_root().add_child(bullet_instance)
 		timer = 0.0
 	
@@ -39,7 +38,6 @@ func _process(delta):
 		can_regen = false
 		yield(get_tree().create_timer(6),"timeout")
 		can_regen = true
-	
 	
 	if Tank.Stats["health"]["pv"]<=0:
 		get_tree().change_scene("res://Menu/Menu.tscn")

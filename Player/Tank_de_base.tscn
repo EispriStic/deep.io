@@ -35,6 +35,7 @@ collision/safe_margin = 0.001
 script = ExtResource( 1 )
 
 [node name="Camera2D2" type="Camera2D" parent="."]
+position = Vector2( 11, 23 )
 current = true
 zoom = Vector2( 5, 5 )
 smoothing_enabled = true
@@ -57,14 +58,14 @@ shape = SubResource( 1 )
 [node name="Hitbox_area" type="CollisionShape2D" parent="Hitbox"]
 shape = SubResource( 2 )
 
+[node name="Bullet_point" type="Node2D" parent="."]
+position = Vector2( 68, 0 )
+
 [node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 1, -10 )
 scale = Vector2( 0.352083, 0.360648 )
 z_index = 1
 texture = ExtResource( 2 )
-
-[node name="Bullet_point" type="Node2D" parent="Sprite"]
-position = Vector2( 661.776, 0 )
-scale = Vector2( 2.84024, 2.77279 )
 
 [node name="Barre_dxp" parent="." instance=ExtResource( 4 )]
 margin_left = -190.0
