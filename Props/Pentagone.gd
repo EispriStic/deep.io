@@ -10,14 +10,27 @@ var pentagone_xp = 4500
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$ProgressBar.set_max(pentagone_pv)
-	var coord_x = (randi() % 15000) - 7500
-	var coord_y = (randi() % 15000) - 7500
+	var coord_x = (randi() % 7) * 1000
+	var coord_y = (randi() % 7) * 1000
+	var neg_x =  (randi() % 2)
+	var neg_y =  (randi() % 2)
+	if neg_x <1:
+		coord_x = coord_x
+	else:
+		coord_x = -coord_x
+		
+	if neg_y <1:
+		coord_y = coord_y
+	else:
+		coord_y = -coord_y
+	
+	print([coord_x, coord_y, Tank.nombre_pentagone])
 	if -7500 < coord_x and coord_x < 7500 and -7500 < coord_y and coord_y < 7500 :
-		if rand_range(0,10) > 4:
+		if rand_range(0,10) > 6:
 			position.x += coord_x 
 			position.y += coord_y 
 	else:
-		if rand_range(0,15) > 12:
+		if rand_range(0,15) > 6:
 			position.x += coord_x 
 			position.y += coord_y
 	$ProgressBar.hide()

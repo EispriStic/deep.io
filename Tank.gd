@@ -159,7 +159,10 @@ var current_select = false
 var spawn_tank
 var pos = Vector2(0,0)
 var point = 0
-
+var nombre_carre = 0
+var nombre_triangle = 0
+var nombre_pentagone = 0
+var nombre_hexagone = 0
 
 
 # Called when the node enters the scene tree for the first time.
@@ -188,9 +191,7 @@ func _is_level_up():
 			point += 1
 			xp_need = 25*(level+1)*(1+(level+1))
 			xp -= xp_need
-		
-		print(xp_need)
-		print(level)
+	
 		xp = xp
 	return level
 		
@@ -200,7 +201,6 @@ func _update_stat():
 		for attribut in Stats[stat]:
 			if attribut.ends_with("value"):
 				Stats[stat][attribut] = Stats[stat]["min_"+stat] + (((Stats[stat]["max_"+stat] - Stats[stat]["min_"+stat]) /15) * Stats[stat][stat])
-	print(Stats)
 		
 func _set_stat():
 	for stat in Stats:
