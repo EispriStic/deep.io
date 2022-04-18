@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Asset/HUD/Styles/button/hovver.tres" type="StyleBox" id=1]
 [ext_resource path="res://Asset/HUD/Styles/button/evolve.tres" type="StyleBox" id=2]
 [ext_resource path="res://HUD/Evolve/Evolve.gd" type="Script" id=3]
-[ext_resource path="res://Asset/Player/Tank_test.png" type="Texture" id=4]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 1, 1, 1, 1 )
@@ -42,9 +41,8 @@ custom_styles/normal = ExtResource( 2 )
 [node name="Sprite" type="Sprite" parent="Panel/Button"]
 position = Vector2( 75, 61 )
 scale = Vector2( 0.276042, 0.25 )
-texture = ExtResource( 4 )
 
-[node name="Button2" type="Button" parent="Panel"]
+[node name="Button4" type="Button" parent="Panel"]
 margin_left = 178.0
 margin_top = 151.0
 margin_right = 329.0
@@ -52,6 +50,10 @@ margin_bottom = 280.0
 custom_styles/hover = ExtResource( 1 )
 custom_styles/pressed = ExtResource( 2 )
 custom_styles/normal = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="Panel/Button4"]
+position = Vector2( 75, 61 )
+scale = Vector2( 0.276042, 0.25 )
 
 [node name="Button3" type="Button" parent="Panel"]
 margin_left = 17.0
@@ -62,7 +64,11 @@ custom_styles/hover = ExtResource( 1 )
 custom_styles/pressed = ExtResource( 2 )
 custom_styles/normal = ExtResource( 2 )
 
-[node name="Button4" type="Button" parent="Panel"]
+[node name="Sprite" type="Sprite" parent="Panel/Button3"]
+position = Vector2( 75, 61 )
+scale = Vector2( 0.276042, 0.25 )
+
+[node name="Button2" type="Button" parent="Panel"]
 margin_left = 177.0
 margin_top = 14.0
 margin_right = 328.0
@@ -71,7 +77,11 @@ custom_styles/hover = ExtResource( 1 )
 custom_styles/pressed = ExtResource( 2 )
 custom_styles/normal = ExtResource( 2 )
 
+[node name="Sprite" type="Sprite" parent="Panel/Button2"]
+position = Vector2( 75, 61 )
+scale = Vector2( 0.276042, 0.25 )
+
 [connection signal="pressed" from="Panel/Button" to="." method="_on_Button_pressed"]
-[connection signal="pressed" from="Panel/Button2" to="." method="_on_Button2_pressed"]
-[connection signal="pressed" from="Panel/Button3" to="." method="_on_Button3_pressed"]
 [connection signal="pressed" from="Panel/Button4" to="." method="_on_Button4_pressed"]
+[connection signal="pressed" from="Panel/Button3" to="." method="_on_Button3_pressed"]
+[connection signal="pressed" from="Panel/Button2" to="." method="_on_Button2_pressed"]

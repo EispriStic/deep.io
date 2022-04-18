@@ -5,7 +5,7 @@ extends RigidBody2D
 # var a = 2
 # var b = "text"
 var carre_pv = 11
-var carre_xp = 130
+var carre_xp = Tank.level*25 + 150
 
 
 # Called when the node enters the scene tree for the first time.
@@ -42,10 +42,12 @@ func _ready():
 	$ProgressBar.hide()
 
 func _process(delta):
+	carre_xp = Tank.level*25 + 150
 	$ProgressBar.value = carre_pv
 	if carre_pv <= 0 :
 		Tank.xp += carre_xp
 		queue_free()
+		Tank.nombre_carre -= 1
 
 
 func _on_Carre_body_entered(body):

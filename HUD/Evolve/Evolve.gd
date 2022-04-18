@@ -16,8 +16,8 @@ func start():
 	$Panel.show()
 	$Panel/Button.disabled = false
 	$Panel/Button/Sprite.texture = load(("res://Asset/Player/"+Tank.class_up[Tank.up_tree + "1"]+".png"))
-	print("res://Asset/Player/"+Tank.class_up[Tank.up_tree + "1"][0]+".png")
 	$Panel/Button2.disabled = false
+	$Panel/Button2/Sprite.texture = load(("res://Asset/Player/"+Tank.class_up[Tank.up_tree + "2"]+".png"))
 	$Panel/Button3.disabled = false
 	$Panel/Button4.disabled = false
 	
@@ -44,17 +44,22 @@ func _on_Button_pressed():
 
 func _on_Button2_pressed():
 	stop()
+	print(Tank.up_tree)
+	Tank.current_select = false
 	Tank.up_tree += "2"
+	Tank.change_tank(Tank.spawn_tank, 0)
 	print(Tank.up_tree)
 
 
 func _on_Button3_pressed():
 	stop()
 	Tank.up_tree += "3"
+	Tank.current_select = false
 	print(Tank.up_tree)
 
 
 func _on_Button4_pressed():
 	stop()
 	Tank.up_tree += "4"
+	Tank.current_select = false
 	print(Tank.up_tree)

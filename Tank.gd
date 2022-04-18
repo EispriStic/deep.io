@@ -229,6 +229,7 @@ func change_tank(node, arg):
 func _add_damage(damage):
 	Stats["health"]["pv"] -= damage - damage*(Stats["defense"]["defense_value"] / 100)
 	print(Stats["health"]["pv"])
+
 		
 		
 				

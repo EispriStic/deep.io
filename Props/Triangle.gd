@@ -5,7 +5,7 @@ extends RigidBody2D
 # var a = 2
 # var b = "text"
 var triangle_pv = 25
-var triangle_xp = 300
+var triangle_xp = Tank.level*25 + 500
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -37,10 +37,12 @@ func _ready():
 	$ProgressBar.hide()
 
 func _process(delta):
+	triangle_xp = Tank.level*25 + 500
 	$ProgressBar.value = triangle_pv
 	if triangle_pv <= 0 :
 		Tank.xp += triangle_xp
 		queue_free()
+		Tank.nombre_triangle -= 1
 
 
 

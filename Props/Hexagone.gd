@@ -5,7 +5,7 @@ extends RigidBody2D
 # var a = 2
 # var b = "text"
 var hexagone_pv = 1500
-var hexagone_xp = Tank.level*25 + 50000
+var hexagone_xp = Tank.level*150 + 50000
 
 
 # Called when the node enters the scene tree for the first time.
@@ -29,6 +29,7 @@ func _process(delta):
 	if hexagone_pv <= 0 :
 		Tank.xp += hexagone_xp
 		queue_free()
+		Tank.nombre_hexagone -= 1
 
 
 func _on_Hexagone_body_entered(body):

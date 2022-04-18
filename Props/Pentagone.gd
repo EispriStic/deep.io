@@ -5,7 +5,7 @@ extends RigidBody2D
 # var a = 2
 # var b = "text"
 var pentagone_pv = 80
-var pentagone_xp = 15000
+var pentagone_xp = Tank.level*25 + 8500
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -37,10 +37,12 @@ func _ready():
 
 
 func _process(delta):
+	Tank.level*25 + 8500
 	$ProgressBar.value = pentagone_pv
 	if pentagone_pv <= 0 :
 		Tank.xp += pentagone_xp
 		queue_free()
+		Tank.nombre_pentagone -= 1
 
 
 
