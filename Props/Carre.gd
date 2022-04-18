@@ -11,8 +11,8 @@ var carre_xp = Tank.level*25 + 150
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$ProgressBar.set_max(carre_pv)
-	var coord_x = (randi() % 29000)
-	var coord_y = (randi() % 29000)
+	var coord_x = (randi() % 28000) + 1000
+	var coord_y = (randi() % 28000) + 1000
 	var neg_x =  (randi() % 2)
 	var neg_y =  (randi() % 2)
 	if neg_x <1:
