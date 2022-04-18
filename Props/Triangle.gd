@@ -10,8 +10,8 @@ var triangle_xp = 300
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$ProgressBar.set_max(triangle_pv)
-	var coord_x = (randi() % 29) *1000
-	var coord_y = (randi() % 29) *1000
+	var coord_x = (randi() % 29000)
+	var coord_y = (randi() % 29000) 
 	var neg_x =  (randi() % 2)
 	var neg_y =  (randi() % 2)
 	if neg_x <1:
@@ -23,12 +23,12 @@ func _ready():
 		coord_y = coord_y
 	else:
 		coord_y = -coord_y
-	if -100 < coord_x and coord_x < 0 :
-		coord_x -= 400
+	if -1000 < coord_x and coord_x < 0 :
+		coord_x -= 1200
 		position.x += coord_x 
 		position.y += coord_y 
-	elif 0 < coord_x and coord_x < 100 :
-		coord_x += 400
+	elif 0 < coord_x and coord_x < 1000 :
+		coord_x += 1200
 		position.x += coord_x 
 		position.y += coord_y 
 	else:

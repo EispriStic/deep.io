@@ -60,13 +60,13 @@ func _physics_process(delta):
 		
 func _on_Hitbox_body_entered(body):
 	if body.is_in_group("Hexagone"):
-		Tank.Stats["health"]["pv"] -= Tank.degat_hexagone
+		Tank._add_damage(Tank.degat_hexagone)
 	if body.is_in_group("Carre"):
-		Tank.Stats["health"]["pv"]  -= Tank.degat_carre
+		Tank._add_damage(Tank.degat_carre)
 	if body.is_in_group("Triangle"):
-		Tank.Stats["health"]["pv"]  -= Tank.degat_triangle
+		Tank._add_damage(Tank.degat_triangle)
 	if body.is_in_group("Pentagone"):
-		Tank.Stats["health"]["pv"]  -= Tank.degat_pentagone
+		Tank._add_damage(Tank.degat_pentagone)
 
 #	var direction = Vector2()
 #	if Input.is_action_pressed('right') :

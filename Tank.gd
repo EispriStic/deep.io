@@ -35,13 +35,13 @@ var Stats = {
 	},
 	"attack":{
 		"min_attack":4.0,
-		"max_attack":16.0,
+		"max_attack":25.0,
 		"attack":0,
 		"attack_value":00
 	},
 	"defense":{
-		"min_defense":5.0,
-		"max_defense":25.0,
+		"min_defense":0.0,
+		"max_defense":45.0,
 		"defense":0,
 		"defense_value":0.0
 	},
@@ -107,7 +107,7 @@ var Stats = {
 	},
 	"lifesteal":{
 		"min_lifesteal":0.0,
-		"max_lifesteal":0.15,
+		"max_lifesteal":0.22,
 		"lifesteal":0,
 		"lifesteal_value":0.0
 	},
@@ -173,7 +173,7 @@ func _ready():
 
 
 func _process(delta):
-	xp_need = 25*(level+1)*(1+level+1)
+	xp_need = 18*(level+1)*(1+level+1)
 	_is_level_up()
 	_update_tank()
 
@@ -183,13 +183,13 @@ func _process(delta):
 
 		
 func _is_level_up():
-	xp_need = 25*(level+1)*(1+(level+1))
+	xp_need = 18*(level+1)*(1+(level+1))
 	if xp >= xp_need:
 		var gain = 0
 		while xp >= xp_need:
 			level += 1
 			point += 1
-			xp_need = 25*(level+1)*(1+(level+1))
+			xp_need = 18*(level+1)*(1+(level+1))
 			xp -= xp_need
 	
 		xp = xp
@@ -226,6 +226,9 @@ func change_tank(node, arg):
 		node.remove_child(i)
 	node.add_child(new_tank)
 	
+func _add_damage(damage):
+	Stats["health"]["pv"] -= damage - damage*(Stats["defense"]["defense_value"] / 100)
+	print(Stats["health"]["pv"])
 		
 		
 				

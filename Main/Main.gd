@@ -23,7 +23,7 @@ func _ready():
 	Tank.spawn_tank = $Tank_spawn
 
 func _process(delta):
-	print([Tank.nombre_carre, Tank.nombre_hexagone, Tank.nombre_pentagone, Tank.nombre_triangle])
+
 	if Tank.nombre_carre < 1100 :
 		if time_c > timer_c:
 			for i in range(9):

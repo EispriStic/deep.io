@@ -5,13 +5,13 @@ extends RigidBody2D
 # var a = 2
 # var b = "text"
 var pentagone_pv = 80
-var pentagone_xp = 4500
+var pentagone_xp = 15000
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$ProgressBar.set_max(pentagone_pv)
-	var coord_x = (randi() % 7) * 1000
-	var coord_y = (randi() % 7) * 1000
+	var coord_x = (randi() % 7000) 
+	var coord_y = (randi() % 7000) 
 	var neg_x =  (randi() % 2)
 	var neg_y =  (randi() % 2)
 	if neg_x <1:
