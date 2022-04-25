@@ -40,7 +40,7 @@ func _process(delta):
 	triangle_xp = Tank.level*25 + 500
 	$ProgressBar.value = triangle_pv
 	if triangle_pv <= 0 :
-		Tank.xp += triangle_xp
+		Tank._add_xp(triangle_xp)
 		queue_free()
 		Tank.nombre_triangle -= 1
 
@@ -49,7 +49,8 @@ func _process(delta):
 func _on_Triangle_body_entered(body):
 	if body.is_in_group("Balles"):
 		triangle_pv -= Tank.Stats["attack"]["attack_value"]
-		if Tank.Stats["health"]["pv"] < Tank.Stats["health"]["health_value"]:
-			Tank.Stats["health"]["pv"] += (Tank.Stats["attack"]["attack_value"] * Tank.Stats["lifesteal"]["lifesteal_value"])
-			print(Tank.Stats["health"]["pv"])
-		$ProgressBar.show()
+		Tank._get_lifesteal()
+	elif body.is_in_group("Tank"):
+		print("TANK")
+		triangle_pv -= Tank._fist_damage()
+	$ProgressBar.show()

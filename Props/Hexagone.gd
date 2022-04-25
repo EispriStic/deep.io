@@ -2,7 +2,7 @@ extends RigidBody2D
 
 
 # Declare member variables here. Examples:
-# var a = 2
+# var a = 2z
 # var b = "text"
 var hexagone_pv = 1500
 var hexagone_xp = Tank.level*150 + 50000
@@ -27,7 +27,7 @@ func _process(delta):
 	hexagone_xp = Tank.level*25 + 25000
 	$ProgressBar.value = hexagone_pv
 	if hexagone_pv <= 0 :
-		Tank.xp += hexagone_xp
+		Tank._add_xp(hexagone_xp)
 		queue_free()
 		Tank.nombre_hexagone -= 1
 
@@ -35,7 +35,7 @@ func _process(delta):
 func _on_Hexagone_body_entered(body):
 	if body.is_in_group("Balles"):
 		hexagone_pv -= Tank.Stats["attack"]["attack_value"]
-		if Tank.Stats["health"]["pv"] < Tank.Stats["health"]["health_value"]:
-			Tank.Stats["health"]["pv"] += (Tank.Stats["attack"]["attack_value"] * Tank.Stats["lifesteal"]["lifesteal_value"])
-			print(Tank.Stats["health"]["pv"])
-		$ProgressBar.show()
+		Tank._get_lifesteal()
+	elif body.is_in_group("Tank"):
+		hexagone_pv -= Tank._fist_damage()
+	$ProgressBar.show()

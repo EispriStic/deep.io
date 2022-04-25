@@ -88,8 +88,8 @@ var Stats = {
 		"sida_value":0.0
 	},
 	"farmer":{
-		"min_farmer":0.0,
-		"max_farmer":150.0,
+		"min_farmer":1.0,
+		"max_farmer":3.5,
 		"farmer":0,
 		"farmer_value":0.0
 	},
@@ -112,8 +112,8 @@ var Stats = {
 		"lifesteal_value":0.0
 	},
 	"fist":{
-		"min_fist":1.0,
-		"max_fist":23.0,
+		"min_fist":4.0,
+		"max_fist":33.0,
 		"fist":0,
 		"fist_value":0.0
 	},
@@ -158,7 +158,7 @@ var current_select = false
 
 var spawn_tank
 var pos = Vector2(0,0)
-var point = 0
+var point = 15
 var nombre_carre = 0
 var nombre_triangle = 0
 var nombre_pentagone = 0
@@ -177,11 +177,7 @@ func _process(delta):
 	_is_level_up()
 	_update_tank()
 
-
 	
-
-
-		
 func _is_level_up():
 	xp_need = 18*(level+1)*(1+(level+1))
 	if xp >= xp_need:
@@ -212,8 +208,9 @@ func _set_stat():
 func _update_tank():
 	if level >= level_up_refer[len(up_tree) - 1]:
 		if len(befor_evolve) < len(up_tree):
-			befor_evolve.append(up_tree[len(up_tree) - 1])
-		if befor_evolve[len(befor_evolve)-1] == up_tree:
+			befor_evolve.append(up_tree)
+		if befor_evolve[len(befor_evolve)-1] == up_tree :
+			print("ok")
 			current_select = true
 
 
@@ -226,23 +223,18 @@ func change_tank(node, arg):
 		node.remove_child(i)
 	node.add_child(new_tank)
 	
+
 func _add_damage(damage):
 	Stats["health"]["pv"] -= damage - damage*(Stats["defense"]["defense_value"] / 100)
 	print(Stats["health"]["pv"])
 
-		
-		
-				
-	
+func _add_xp(value):
+	Tank.xp += (value * Stats["farmer"]["farmer_value"])
 
+func _fist_damage():
+	var value = Stats["fist"]["fist_value"]
+	return value
 
-	
-	
-
-	
-	
-			
-	
-	
-
-
+func _get_lifesteal():
+	if Stats["health"]["pv"] < Stats["health"]["health_value"]:
+			Stats["health"]["pv"] += (Stats["attack"]["attack_value"] * Stats["lifesteal"]["lifesteal_value"])

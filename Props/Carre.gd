@@ -45,7 +45,7 @@ func _process(delta):
 	carre_xp = Tank.level*25 + 150
 	$ProgressBar.value = carre_pv
 	if carre_pv <= 0 :
-		Tank.xp += carre_xp
+		Tank._add_xp(carre_xp)
 		queue_free()
 		Tank.nombre_carre -= 1
 
@@ -53,8 +53,9 @@ func _process(delta):
 func _on_Carre_body_entered(body):
 	if body.is_in_group("Balles"):
 		carre_pv -= Tank.Stats["attack"]["attack_value"]
-		if Tank.Stats["health"]["pv"] < Tank.Stats["health"]["health_value"]:
-			Tank.Stats["health"]["pv"] += (Tank.Stats["attack"]["attack_value"] * Tank.Stats["lifesteal"]["lifesteal_value"])
-			print(Tank.Stats["health"]["pv"])
-		$ProgressBar.show()
+		Tank._get_lifesteal()
+	elif body.is_in_group("Tank"):
+		print("TANK")
+		carre_pv -= Tank._fist_damage()
+	$ProgressBar.show()
 

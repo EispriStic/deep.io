@@ -40,7 +40,7 @@ func _process(delta):
 	Tank.level*25 + 8500
 	$ProgressBar.value = pentagone_pv
 	if pentagone_pv <= 0 :
-		Tank.xp += pentagone_xp
+		Tank._add_xp(pentagone_xp)
 		queue_free()
 		Tank.nombre_pentagone -= 1
 
@@ -49,7 +49,7 @@ func _process(delta):
 func _on_Pentagone_body_entered(body):
 	if body.is_in_group("Balles"):
 		pentagone_pv -= Tank.Stats["attack"]["attack_value"]
-		if Tank.Stats["health"]["pv"] < Tank.Stats["health"]["health_value"]:
-			Tank.Stats["health"]["pv"] += (Tank.Stats["attack"]["attack_value"] * Tank.Stats["lifesteal"]["lifesteal_value"])
-			print(Tank.Stats["health"]["pv"])
-		$ProgressBar.show()
+		Tank._get_lifesteal()
+	elif body.is_in_group("Tank"):
+		pentagone_pv -= Tank._fist_damage()
+	$ProgressBar.show()
