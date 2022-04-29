@@ -15,6 +15,7 @@ var timer = 0
 
 var bullet = preload("res://Balles/Balle_classic.tscn")
 
+
 func _ready():
 	Tank._update_stat()
 	position = Tank.pos
@@ -27,10 +28,15 @@ func _process(delta):
 	
 	if Input.is_action_pressed("fire") and timer >= (Tank.Stats["reload"]["max_reload"] + 6.0) - (Tank.Stats["reload"]["reload_value"]):
 		var bullet_instance = bullet.instance()
+		var bullet_instance2 = bullet.instance()
 		bullet_instance.position = $Sprite/Bullet_point.get_global_position()
+		bullet_instance2.position =  $Sprite/Bullet_point2.get_global_position()
 		bullet_instance.rotation_degrees = $Sprite.rotation_degrees
+		bullet_instance2.rotation_degrees = $Sprite.rotation_degrees
 		bullet_instance.apply_impulse(Vector2(), Vector2(Tank.Stats["shoot_speed"]["shoot_speed_value"], 0 ).rotated($Sprite.rotation))
+		bullet_instance2.apply_impulse(Vector2(), Vector2(Tank.Stats["shoot_speed"]["shoot_speed_value"], 0 ).rotated($Sprite.rotation))
 		get_tree().get_root().add_child(bullet_instance)
+		get_tree().get_root().add_child(bullet_instance2)
 		timer = 0.0
 	
 	if Tank.Stats["health"]["pv"] < Tank.Stats["health"]["health_value"] and can_regen:
